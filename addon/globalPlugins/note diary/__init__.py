@@ -413,6 +413,7 @@ class Dialogo(wx.Dialog):
 		guardarCapitulo(self.diario, self.capitulo, self.editor.GetValue())
 		self.Refresh()
 		self.Update()
+		self.onFoco()
 		self.reproducirSonido("guardar-cap")
 		self.dlg_editor.Destroy()
 
@@ -501,7 +502,7 @@ class Dialogo(wx.Dialog):
 		time.sleep(1)
 		
 
-	def onFoco(self, event):
+	def onFoco(self, event=None):
 		if self.tree.GetItemParent(self.tree.GetSelection()) != self.root:
 			self.reproducirSonido("pasar-cap")
 			# optener los datos del capítulo como el nombre, el diario la fecha y el número de páginas
@@ -512,10 +513,8 @@ class Dialogo(wx.Dialog):
 			# optener la fecha de creación del capítulo
 			self.fecha = time.strftime("%d/%m/%Y", time.localtime(os.path.getctime(self.dir_capitulo)))
 			self.fecha_mod = time.strftime("%d/%m/%Y", time.localtime(os.path.getmtime(self.dir_capitulo)))
-			self.num_lineas = len(open(self.dir_capitulo, "r").readlines())
-			self.num_paginas = 1
-			for i in range(1, self.num_lineas):
-				if i % 47 == 0: self.num_paginas += 1
+			#self.num_lineas = len(open(self.dir_capitulo, "r").readlines())
+			self.num_paginas = len(open(self.dir_capitulo, "r").readlines())//50+1
 			# mostrar los datos en el campo de texto
 			info = "Capítulo: " + self.name_cap + "\n" + "Pertenese al diario: " + self.name_diario + "\n" + "Fecha de creación: " + self.fecha + "\n" + "Fecha de modificación: " + self.fecha_mod + "\n" + "Número de páginas: " + str(self.num_paginas)
 			self.info.SetValue(info)
