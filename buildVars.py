@@ -30,7 +30,7 @@ addon_info = {
 	# Author(s)
 	"addon_author": "Johan G <gutierrezjohanantonio@gmail.com>",
 	# URL for the add-on documentation support
-	"addon_url": None,
+	"addon_url": "https://github.com/JohanAnim/Note-diary",
 	# URL for the add-on repository where the source code can be found
 	"addon_sourceURL": "https://github.com/JohanAnim/Note-diary",
 	# Documentation file name
