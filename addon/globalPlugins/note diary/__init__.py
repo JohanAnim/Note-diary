@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2022 Johan G <gutierrezjohanantonio@gmail.com>
+# Copyright (C) 2023 Johan G <gutierrezjohanantonio@gmail.com>
 # This file is covered by the GNU General Public License.
 
 import wx
@@ -15,6 +15,7 @@ import sys, os,config
 sys.path.append(os.path.dirname(__file__))
 from scriptHandler import script
 from .settings import noteDiarySettingsPanel
+from accessible import MenuAccessible
 import addonHandler
 addonHandler.initTranslation()
 
@@ -152,6 +153,8 @@ class Dialogo(wx.Dialog):
 		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label="&Menú", pos=(10, 10))
 		self.Bind(wx.EVT_BUTTON, self.onMenu, self.btn_menu)
 		self.btn_menu.SetToolTip(wx.ToolTip(_("Menú de opciones")))
+		# añadir la accesibilidad al menú
+		self.btn_menu.SetAccessible(MenuAccessible(self.btn_menu))
 
 		# Translator: Label for the tree
 		self.label = wx.StaticText(self.mainPanel, label="Diarios")
