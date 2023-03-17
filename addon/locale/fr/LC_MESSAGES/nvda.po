@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'AcortadorURL' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'AcortadorURL' '0.2'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2020-10-24 17:30+0200\n"
+"PO-Revision-Date: 2020-10-28 08:08+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. Translators: Name of the item in the tools menu
+#: addon\globalPlugins\ShortenURL\__init__.py:32
+msgid "&AcortadorURL"
+msgstr "&RéduireURL"
+
+#. Translators: Description for the input gesture panel
+#: addon\globalPlugins\ShortenURL\__init__.py:50
+msgid "Activar la ventana de AcortadorURL"
+msgstr "Activer la fenêtre RéduireURL"
+
+#. Translators: Category name in panel entry gestures
+#. Translators: Window title
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: addon\globalPlugins\ShortenURL\__init__.py:52
+#: addon\globalPlugins\ShortenURL\__init__.py:81 buildVars.py:22
+msgid "AcortadorURL"
+msgstr "RéduireURL"
+
+#. Translators: Label for the service combo box
+#: addon\globalPlugins\ShortenURL\__init__.py:88
+msgid "&Servicios acortadores disponibles:"
+msgstr "&Services réducteurs d'URLs disponibles:"
+
+#. Translators: Label for the URL shortening field
+#: addon\globalPlugins\ShortenURL\__init__.py:95
+msgid "&url para acortar:"
+msgstr "&URL à réduire:"
+
+#. Translators: shorten url button name
+#: addon\globalPlugins\ShortenURL\__init__.py:100
+msgid "&Acortar URL"
+msgstr "&Réduire URL"
+
+#. Translators: Label for the result field with shortened url
+#: addon\globalPlugins\ShortenURL\__init__.py:104
+msgid "&Dirección URL acortada:"
+msgstr "&Adresse URL réduite:"
+
+#. Translators: Copy to clipboard button name
+#: addon\globalPlugins\ShortenURL\__init__.py:108
+msgid "&Copiar al portapapeles"
+msgstr "&Copier dans le presse-papiers"
+
+#. Translators: Exit button name
+#: addon\globalPlugins\ShortenURL\__init__.py:112
+msgid "Salir Alt+F4"
+msgstr "Quitter Alt+F4"
+
+#. Translators: Tells the user that he cannot leave the field blank
+#: addon\globalPlugins\ShortenURL\__init__.py:162
+msgid ""
+"No puedes dejar el campo de la url en blanco para acortar.\n"
+"Asegúrate de introducir una URL correcta."
+msgstr ""
+"Vous ne pouvez pas laisser le champ URL vide à réduire.\n"
+"Assurez-vous d'entrer l'URL correcte."
+
+#. Translators: Message window title: Error
+#: addon\globalPlugins\ShortenURL\__init__.py:166
+#: addon\globalPlugins\ShortenURL\__init__.py:176
+#: addon\globalPlugins\ShortenURL\__init__.py:192
+#: addon\globalPlugins\ShortenURL\__init__.py:203
+msgid "Error"
+msgstr "Erreur"
+
+#. Translators: Error message, the url is not valid
+#: addon\globalPlugins\ShortenURL\__init__.py:172
+msgid ""
+"La URL que a introducido no es correcta.\n"
+"Asegúrese de introducir una URL valida."
+msgstr ""
+"L'URL que vous avez entré est incorrect.\n"
+"Assurez-vous d'entrer une URL valide."
+
+#. Translators: Error message, service failed
+#: addon\globalPlugins\ShortenURL\__init__.py:187
+msgid ""
+"No se pudo generar la URL acortada.\n"
+"La conexión con el servicio fallo.\n"
+"Inténtelo de nuevo y si el problema persiste elija otro servicio acortador."
+msgstr ""
+"Impossible de générer l'URL réduite.\n"
+"La connexion au service a échoué.\n"
+"S'il vous plaît essayer de nouveau et si le problème persiste choisissez un autre service réducteur."
+
+#. Translators: Error message, nothing to copy to clipboard
+#: addon\globalPlugins\ShortenURL\__init__.py:199
+msgid ""
+"No hay ninguna URL acortada.\n"
+"Tiene que generar una antes para copiarla al portapapeles."
+msgstr ""
+"Aucune URL réduite.\n"
+"Vous devez générer une avant afin de la copier dans le presse-papiers."
+
+#: addon\globalPlugins\ShortenURL\__init__.py:207
+msgid "Se a copiado la URL al portapapeles. Ya puede compartirla."
+msgstr "L'URL a été copiée dans le presse-papiers. Vous pouvez désormais le partager."
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:25
+msgid "Acorta URLs facilmente."
+msgstr "Réduire URLs facilement."

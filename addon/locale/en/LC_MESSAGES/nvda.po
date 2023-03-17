@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: URL Shortener\n"
+"POT-Creation-Date: 2021-12-31 11:24+0400\n"
+"PO-Revision-Date: 2021-12-31 11:32+0400\n"
+"Last-Translator: Dragan Ratkovich\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: __init__.py:32
+msgid "&AcortadorURL"
+msgstr "&URLShortener"
+
+#: __init__.py:50
+msgid "Activar la ventana de AcortadorURL"
+msgstr "Activate the URL Shortener window"
+
+#: __init__.py:52 __init__.py:85 buildVars.py:22
+msgid "AcortadorURL"
+msgstr "URLShortener"
+
+#: __init__.py:92
+msgid "&Servicios acortadores disponibles:"
+msgstr "&Available services for shortening:"
+
+#: __init__.py:99
+msgid "&url para acortar:"
+msgstr "url for shortenin&g:"
+
+#: __init__.py:104
+msgid "&Acortar URL"
+msgstr "&Shorten URL"
+
+#: __init__.py:108
+msgid "&Dirección URL acortada:"
+msgstr "Shortened &URL:"
+
+#: __init__.py:112
+msgid "&Copiar al portapapeles"
+msgstr "&Copy to clipboard"
+
+#: __init__.py:116
+msgid "Salir Alt+F4"
+msgstr "Close Alt+F4"
+
+#: __init__.py:166
+msgid ""
+"No puedes dejar el campo de la url en blanco para acortar.\n"
+"Asegúrate de introducir una URL correcta."
+msgstr ""
+"You cannot leave the URL field blank to shorten it..\n"
+"Make sure you entered the correct URL."
+
+#: __init__.py:170 __init__.py:180 __init__.py:196 __init__.py:207
+msgid "Error"
+msgstr "Error"
+
+#: __init__.py:176
+msgid ""
+"La URL que a introducido no es correcta.\n"
+"Asegúrese de introducir una URL valida."
+msgstr ""
+"You entered an invalid URL.\n"
+"Make sure you enter a valid URL."
+
+#: __init__.py:191
+msgid ""
+"No se pudo generar la URL acortada.\n"
+"La conexión con el servicio fallo.\n"
+"Inténtelo de nuevo y si el problema persiste elija otro servicio acortador."
+msgstr ""
+"The shortened url could not be generated.\n"
+"Failed to connect to the service.\n"
+"Please try again and if the problem persists, select a different shortening service."
+
+#: __init__.py:203
+msgid ""
+"No hay ninguna URL acortada.\n"
+"Tiene que generar una antes para copiarla al portapapeles."
+msgstr ""
+"No shortened URL.\n"
+"You must create it before copying it to the clipboard."
+
+#: __init__.py:211
+msgid "Se a copiado la URL al portapapeles. Ya puede compartirla."
+msgstr "The url has been copied to the clipboard. Now you can share it."
+
+#: buildVars.py:25
+msgid "Acorta URLs facilmente."
+msgstr "Shorten URLs easily."

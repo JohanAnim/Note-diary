@@ -3,6 +3,7 @@
 # This file is covered by the GNU General Public License.
 
 import wx
+import wx.adv
 import shutil
 import gui
 import globalPluginHandler
@@ -152,8 +153,8 @@ class Dialogo(wx.Dialog):
 		# Translators: Label for the button menu
 		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label="&Menú", pos=(10, 10))
 		self.Bind(wx.EVT_BUTTON, self.onMenu, self.btn_menu)
-		self.btn_menu.SetToolTip(wx.ToolTip(_("Menú de opciones")))
-		# añadir la accesibilidad al menú
+		# evento para abrir el menú con la tecla flecha abajo
+		self.btn_menu.Bind(wx.EVT_CHAR_HOOK, self.onCharHook)
 		self.btn_menu.SetAccessible(MenuAccessible(self.btn_menu))
 
 		# Translator: Label for the tree
@@ -215,6 +216,12 @@ class Dialogo(wx.Dialog):
 		self.PopupMenu(menu, self.btn_menu.GetPosition())
 		menu.Destroy()
 
+	def onCharHook(self, event):
+		if event.GetKeyCode() == wx.WXK_DOWN:
+			self.onMenu(event)
+		else:
+			event.Skip()
+
 	def onMenuContextual(self, event):
 		# crear un menú
 		menu = wx.Menu()
@@ -251,10 +258,9 @@ class Dialogo(wx.Dialog):
 					# translators: Message to show when the diary already exists
 					wx.MessageBox(_("al parecer este diario ya  existe.\nrevise que el nombre no coinsida con otro diario."), "Error", wx.OK | wx.ICON_ERROR)
 					return
-				# añadir el diario al árbol
-				self.tree.AppendItem(self.root, dlg.GetValue())
-				# reproducir un sonido
-				self.reproducirSonido("crear-diario")
+				# cuando termine de crearse el diario enfocarlo
+				self.tree.SelectItem(self.tree.AppendItem(self.root, dlg.GetValue()))
+				self.reproducirSonido("crear")
 
 	def onNuevoCapitulo(self, event):
 		if self.tree.GetChildrenCount(self.root) == 0: wx.MessageBox(_("No hay ningún diario.\nPor favor cree uno nuevo."), _("Error"), wx.OK | wx.ICON_ERROR)
@@ -268,8 +274,8 @@ class Dialogo(wx.Dialog):
 						# translators: error message when a chapter already exists
 						wx.MessageBox(_("al parecer este capítulo ya  existe.\nrevise que el nombre no coinsida con otro capítulo."), _("Error"), wx.OK | wx.ICON_ERROR)
 						return
-					self.tree.AppendItem(self.tree.GetSelection(), dlg.GetValue())
-					self.reproducirSonido("crear-diario")
+					# cuando termine de crearse el capítulo enfocarlo
+					self.tree.SelectItem(self.tree.AppendItem(self.tree.GetSelection(), dlg.GetValue()))
 		# translators: error message when a chapter is created without a diary
 		else: wx.MessageBox(_("Debe seleccionar un diario para crear un nuevo capítulo"), _("Error"), wx.OK | wx.ICON_ERROR)
 
@@ -350,8 +356,10 @@ class Dialogo(wx.Dialog):
 			self.lbl_editor = wx.StaticText(self.dlg_editor, label=_("Contenido:"))
 			self.editor = wx.TextCtrl(self.dlg_editor, style=wx.TE_MULTILINE)
 			self.editor.SetValue(cargarCapitulo(self.diario, self.capitulo))
-			# evento del cursor del editor para brindar información con la voz mientras se navega con las flechas
-			self.editor.Bind(wx.EVT_KEY_DOWN, self.onCursor)
+			self.editor.SetFocus()
+			# evento para detectar cuando se edite en el campo de texto
+			self.editor.Bind(wx.EVT_TEXT, self.onEditarTexto)
+			self.esta_editado = False
 			self.reproducirSonido("editar-cap")
 
 			# Translators: label of the button to copy the chapter to the clipboard
@@ -380,28 +388,6 @@ class Dialogo(wx.Dialog):
 			self.dlg_editor.SetSizer(self.sizer_editor)
 			self.dlg_editor.ShowModal()
 
-	# función para que el NVDA vervalice el número de línea en el que se está editando
-	def onCursor(self, event):
-		# cuando se navegue con algunas de las flechas se dirá el número de línea y la página
-		if event.GetKeyCode() == wx.WXK_UP or event.GetKeyCode() == wx.WXK_DOWN or event.GetKeyCode() == wx.WXK_LEFT or event.GetKeyCode() == wx.WXK_RIGHT:
-			# obtener el número de línea
-			linea = self.editor.GetNumberOfLines()
-			# obtener la posición del cursor
-			pos = self.editor.GetInsertionPoint()
-			# obtener la posición de la línea
-			linea_pos = self.editor.XYToPosition(0, linea)
-			#número de páginas total?
-			paginas=linea//50+1
-			# acer que la voz diga en la primera línea de cada página que página 1 de 2, página 2 de 2, etc
-			linea_actual = 0
-			for i in range(0, linea):
-				if i % 50 == 0: linea_actual += 1
-				if pos == self.editor.XYToPosition(0, i): break
-			# solo desir el mensaje cuadno el cursor está en la primera línea de cada página osea cada 50 líneas o cuando se está en la última línea
-			if	pos == self.editor.XYToPosition(0, 0) or pos == self.editor.XYToPosition(0, linea - 1) or pos == self.editor.XYToPosition(0, linea_pos - 1):
-				if pos == self.editor.XYToPosition(0, i): ui.message(_("Página ") + str(linea_actual) + _(" de ") + str(paginas))
-		event.Skip()
-
 	def onCopiarCap(self, event):
 		# copiar el contenido del capítulo al portapapeles
 		wx.TheClipboard.Open()
@@ -420,8 +406,22 @@ class Dialogo(wx.Dialog):
 		self.reproducirSonido("guardar-cap")
 		self.dlg_editor.Destroy()
 
+
+	def onEditarTexto(self, event):
+		self.esta_editado = True
+
 	def onCerrarEditor(self, event):
-		self.dlg_editor.Destroy()
+		if self.esta_editado:
+			# Translators: title of the dialog to close the dialog to edit a chapter
+			dlg_cerrar = wx.MessageBox(_("El capítulo a sido editado, ¿desea guardar los cambios?"), _("Guardar"), wx.YES_NO | wx.CANCEL | wx.ICON_ASTERISK)
+			if dlg_cerrar == wx.YES:
+				self.onGuardarCapitulo(event)
+			elif dlg_cerrar == wx.NO:
+				self.dlg_editor.Destroy()
+			elif dlg_cerrar == wx.CANCEL:
+				pass
+		else:
+			self.dlg_editor.Destroy()
 
 	def onEliminar(self, event):
 		# variables
@@ -430,14 +430,13 @@ class Dialogo(wx.Dialog):
 		self.contar_capitulos = self.tree.GetChildrenCount(self.tree.GetSelection())
 		if self.tree.GetItemParent(self.tree.GetSelection()) == self.root:
 			# Translators: title of the dialog to delete a diary
-			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el diario " + self.diario + "? \nTome en cuenta que esta acción no es rebersible, también eliminará todos los capítulos del diario"), _("Eliminar diario"), wx.YES_NO | wx.ICON_QUESTION)
+			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el diario " + self.diario + "? \nTome en cuenta que esta acción no es rebersible, y que también eliminará todos los capítulos del diario"), _("Eliminar diario"), wx.YES_NO | wx.ICON_ASTERISK)
 			if self.dlg_eliminar.ShowModal() == wx.ID_YES:
 				# eliminar el diario
 				eliminarDiario(self.diario, )
 				self.tree.Delete(self.tree.GetSelection())
-				# Translators: message when a diary is deleted
-				notify = wx.adv.NotificationMessage(title=_("Diario eliminado"), message=_("Se ha eliminado el diario " + self.diario + " con " + str(self.contar_capitulos) + " capítulos"))
-				notify.Show(timeout=10)
+				# reproducir el sonido
+				self.reproducirSonido("borrar")
 				if self.tree.GetChildrenCount(self.root) == 0:
 					# poner el foco en el botón de menú
 					self.btn_menu.SetFocus()
@@ -446,12 +445,10 @@ class Dialogo(wx.Dialog):
 			self.diario = self.tree.GetItemText(self.tree.GetItemParent(self.tree.GetSelection()))
 			self.capitulo = self.tree.GetItemText(self.tree.GetSelection())
 			# Translators: title of the dialog to delete a chapter
-			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el capítulo " + self.capitulo + "?"), _("Eliminar capítulo"), wx.YES_NO | wx.ICON_QUESTION)
+			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el capítulo " + self.capitulo + "?"), _("Eliminar capítulo"), wx.YES_NO | wx.ICON_ASTERISK)
 			if self.dlg_eliminar.ShowModal() == wx.ID_YES:
 				eliminarCapitulo(self.diario, self.capitulo)
 				self.tree.Delete(self.tree.GetSelection())
-				notify = wx.adv.NotificationMessage(title=_("Capítulo eliminado"), message=_("El capítulo " + self.capitulo + " del diario " + self.diario + " ha sido eliminado"), parent=None, flags=wx.ICON_INFORMATION)
-				notify.Show(timeout=10)
 
 			self.dlg_eliminar.Destroy()
 
