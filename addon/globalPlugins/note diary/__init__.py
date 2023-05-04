@@ -76,7 +76,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.runSleep()
 
 	def runSleep(self):
-		# crear un item en el menú de herramientas y en el diálogo de configuración
+		# item en el menú de herramientas y en el diálogo de configuración
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("Note diary"), _("Abrir el diario"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.dlgPrincipal, self.menuItem)
@@ -151,14 +151,14 @@ class Dialogo(wx.Dialog):
 		self.mainPanel = wx.Panel(self)
 
 		# Translators: Label for the button menu
-		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label="&Menú", pos=(10, 10))
+		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label="&Más opciones", pos=(10, 10))
 		self.Bind(wx.EVT_BUTTON, self.onMenu, self.btn_menu)
 		# evento para abrir el menú con la tecla flecha abajo
 		self.btn_menu.Bind(wx.EVT_CHAR_HOOK, self.onCharHook)
 		self.btn_menu.SetAccessible(MenuAccessible(self.btn_menu))
 
 		# Translator: Label for the tree
-		self.label = wx.StaticText(self.mainPanel, label="Diarios")
+		self.label = wx.StaticText(self.mainPanel, label="&Diarios")
 		self.tree = wx.TreeCtrl(self.mainPanel, -1, style=wx.TR_DEFAULT_STYLE | wx.TR_HIDE_ROOT)
 		self.root = self.tree.AddRoot("diarios")
 
@@ -174,7 +174,7 @@ class Dialogo(wx.Dialog):
 		self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.onVerCapitulo)
 		self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.onFoco)
 
-		self.label_info = wx.StaticText(self.mainPanel, label="Información")
+		self.label_info = wx.StaticText(self.mainPanel, label="&Información")
 		self.info = wx.TextCtrl(self.mainPanel, wx.ID_ANY, style=wx.TE_MULTILINE | wx.TE_READONLY)
 		self.info.SetValue(_("Seleccione un diario o un capítulo para ver su información"))
 		self.info.SetInsertionPoint(0)
@@ -236,14 +236,14 @@ class Dialogo(wx.Dialog):
 		renombrar = menu.Append(wx.ID_ANY, _("Renombrar...\tF2"))
 		self.Bind(wx.EVT_MENU, self.onRenombrar, renombrar)
 		# el menú para compartir
-		compartir = wx.Menu()
-		correo = compartir.Append(wx.ID_ANY, _("Compartir por correo"))
-		compartir.Append(wx.ID_ANY, _("Compartir por facebook"))
-		compartir.Append(wx.ID_ANY, _("Compartir por twitter"))
-		compartir.Append(wx.ID_ANY, _("Compartir por whatsapp"))
-		compartir.Append(wx.ID_ANY, _("Compartir por telegram"))
+		# compartir = wx.Menu()
+		# correo = compartir.Append(wx.ID_ANY, _("Compartir por correo"))
+		# compartir.Append(wx.ID_ANY, _("Compartir por facebook"))
+		# compartir.Append(wx.ID_ANY, _("Compartir por twitter"))
+		# compartir.Append(wx.ID_ANY, _("Compartir por whatsapp"))
+		# compartir.Append(wx.ID_ANY, _("Compartir por telegram"))
 		# Translators: Label for the menu item to share
-		menu.AppendSubMenu(compartir, _("Compartir"))
+		# menu.AppendSubMenu(compartir, _("Compartir"))
 
 		self.PopupMenu(menu, event.GetPosition())
 		menu.Destroy()
@@ -353,7 +353,7 @@ class Dialogo(wx.Dialog):
 			# translators: title of the dialog to edit a chapter
 			self.dlg_editor = wx.Dialog(self, title=_("Editando el capítulo: ") + self.capitulo, size=(500, 500))
 			# translators: label of the text field to edit a chapter
-			self.lbl_editor = wx.StaticText(self.dlg_editor, label=_("Contenido:"))
+			self.lbl_editor = wx.StaticText(self.dlg_editor, label=_("Conte&nido:"))
 			self.editor = wx.TextCtrl(self.dlg_editor, style=wx.TE_MULTILINE)
 			self.editor.SetValue(cargarCapitulo(self.diario, self.capitulo))
 			self.editor.SetFocus()
@@ -363,7 +363,7 @@ class Dialogo(wx.Dialog):
 			self.reproducirSonido("editar-cap")
 
 			# Translators: label of the button to copy the chapter to the clipboard
-			self.btn_copiar = wx.Button(self.dlg_editor, label="Copiar")
+			self.btn_copiar = wx.Button(self.dlg_editor, label="Co&piar")
 			self.btn_copiar.Bind(wx.EVT_BUTTON, self.onCopiarCap)
 
 			# Translators: label of the button to save the chapter
