@@ -78,7 +78,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def runSleep(self):
 		# item en el menú de herramientas y en el diálogo de configuración
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
-		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("Note diary"), _("Abrir el diario"))
+		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("Note diary"), _("Abrir la ventana de Note diary"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.dlgPrincipal, self.menuItem)
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(noteDiarySettingsPanel)
 
@@ -151,14 +151,14 @@ class Dialogo(wx.Dialog):
 		self.mainPanel = wx.Panel(self)
 
 		# Translators: Label for the button menu
-		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label="&Más opciones", pos=(10, 10))
+		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label=_("&Más opciones"), pos=(10, 10))
 		self.Bind(wx.EVT_BUTTON, self.onMenu, self.btn_menu)
 		# evento para abrir el menú con la tecla flecha abajo
 		self.btn_menu.Bind(wx.EVT_CHAR_HOOK, self.onCharHook)
 		self.btn_menu.SetAccessible(MenuAccessible(self.btn_menu))
 
 		# Translator: Label for the tree
-		self.label = wx.StaticText(self.mainPanel, label="&Diarios")
+		self.label = wx.StaticText(self.mainPanel, label=_("&Diarios"))
 		self.tree = wx.TreeCtrl(self.mainPanel, -1, style=wx.TR_DEFAULT_STYLE | wx.TR_HIDE_ROOT)
 		self.root = self.tree.AddRoot("diarios")
 
@@ -174,7 +174,7 @@ class Dialogo(wx.Dialog):
 		self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.onVerCapitulo)
 		self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.onFoco)
 
-		self.label_info = wx.StaticText(self.mainPanel, label="&Información")
+		self.label_info = wx.StaticText(self.mainPanel, label=_("&Información"))
 		self.info = wx.TextCtrl(self.mainPanel, wx.ID_ANY, style=wx.TE_MULTILINE | wx.TE_READONLY)
 		self.info.SetValue(_("Seleccione un diario o un capítulo para ver su información"))
 		self.info.SetInsertionPoint(0)
@@ -363,15 +363,15 @@ class Dialogo(wx.Dialog):
 			self.reproducirSonido("editar-cap")
 
 			# Translators: label of the button to copy the chapter to the clipboard
-			self.btn_copiar = wx.Button(self.dlg_editor, label="Co&piar")
+			self.btn_copiar = wx.Button(self.dlg_editor, label=_("Co&piar"))
 			self.btn_copiar.Bind(wx.EVT_BUTTON, self.onCopiarCap)
 
 			# Translators: label of the button to save the chapter
-			self.btn_guardar = wx.Button(self.dlg_editor, label="&Guardar")
+			self.btn_guardar = wx.Button(self.dlg_editor, label=_("&Guardar"))
 			self.btn_guardar.Bind(wx.EVT_BUTTON, self.onGuardarCapitulo)
 
 			# Translators: label of the button to close the dialog to edit a chapter
-			self.btn_cerrar = wx.Button(self.dlg_editor, id=wx.ID_CLOSE, label="&Cerrar")
+			self.btn_cerrar = wx.Button(self.dlg_editor, id=wx.ID_CLOSE, label=_("&Cerrar"))
 			self.btn_cerrar.Bind(wx.EVT_BUTTON, self.onCerrarEditor)
 			self.dlg_editor.SetEscapeId(self.btn_cerrar.GetId())
 
@@ -516,7 +516,7 @@ class Dialogo(wx.Dialog):
 			#self.num_lineas = len(open(self.dir_capitulo, "r").readlines())
 			self.num_paginas = len(open(self.dir_capitulo, "r").readlines())//50+1
 			# mostrar los datos en el campo de texto
-			info = "Capítulo: " + self.name_cap + "\n" + "Pertenese al diario: " + self.name_diario + "\n" + "Fecha de creación: " + self.fecha + "\n" + "Fecha de modificación: " + self.fecha_mod + "\n" + "Número de páginas: " + str(self.num_paginas)
+			info = _("Capítulo: ") + self.name_cap + "\n" + _("Pertenese al diario: ") + self.name_diario + "\n" + _("Fecha de creación: ") + self.fecha + "\n" + _("Fecha de modificación: ") + self.fecha_mod + "\n" + _("Número de páginas: ") + str(self.num_paginas)
 			self.info.SetValue(info)
 		else:
 			self.reproducirSonido("pasar-diario")
@@ -527,7 +527,7 @@ class Dialogo(wx.Dialog):
 			self.fecha_mod = time.strftime("%d/%m/%Y", time.localtime(os.path.getmtime(self.dir_diario)))
 			self.num_capitulos = len(os.listdir(self.dir_diario))
 			# mostrar los datos en el campo de texto de info
-			info = "Nombre del diario: " + self.name_diario + "\n" + "Fecha de creación: " + self.fecha + "\n" + "Fecha de modificación: " + self.fecha_mod + "\n" + "Número de capítulos: " + str(self.num_capitulos)
+			info = _("Nombre del diario: ") + self.name_diario + "\n" + _("Fecha de creación: ") + self.fecha + "\n" + _("Fecha de modificación: ") + self.fecha_mod + "\n" + _("Número de capítulos: ") + str(self.num_capitulos)
 			self.info.SetValue(info)
 
 	def onAcercaDe(self, event):
@@ -547,11 +547,10 @@ class Dialogo(wx.Dialog):
 		# mostrar el cuadro de diálogo
 		self.dlg_acercaDe = wx.adv.AboutDialogInfo()
 		self.dlg_acercaDe.SetName(self.nombre)
-		self.dlg_acercaDe.SetVersion("Verción actual: " + self.version)
-		self.dlg_acercaDe.SetDescription("Descripción: " + self.descripcion)
+		self.dlg_acercaDe.SetVersion(_("Verción actual: ") + self.version)
+		self.dlg_acercaDe.SetDescription(_("Descripción: ") + self.descripcion)
 		self.dlg_acercaDe.SetWebSite(self.url)
 		self.dlg_acercaDe.SetDevelopers([self.autor])
-		self.dlg_acercaDe.SetLicence("Este complemento es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU publicada por la Free Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior. Este complemento se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; sin siquiera la garantía implícita de COMERCIABILIDAD o APTITUD PARA UN PROPÓSITO PARTICULAR. Vea la Licencia Pública General de GNU para más detalles. Debería haber recibido una copia de la Licencia Pública General de GNU junto con este producto. Si no es así, vea <http://www.gnu.org/licenses/>.")
 		wx.adv.AboutBox(self.dlg_acercaDe)
 
 	def onDocumentacion(self, event):
