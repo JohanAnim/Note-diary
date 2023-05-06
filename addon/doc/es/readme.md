@@ -75,3 +75,12 @@ Cuando está activada esta opción, se reproducirá en algunos eventos del compl
 
 Para descargar directamente el complemento puedes dar click en el siguiente enlace:
 [Descargar última versión de Note diary](https://github.com/JohanAnim/Note-diary/raw/Note-diary-v2023.1/Note%20diary%20for%20NVDA-2023.1.nvda-addon)
+
+## Colaboradores
+
+créditos a los siguientes usuarios por colaborar con parte del código fuente y con algunas funcionalidades del mismo:
+funcionalidades del mismo:
+* Héctor J. Benítez Corredera: Implementó la parte inicial de este complemento.
+* metalalchemist: Implementación de algunas de las funcionalidades del complemento.
+
+© 2023 Johan A G
