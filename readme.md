@@ -74,7 +74,7 @@ Cuando está activada esta opción, se reproducirá en algunos eventos del compl
 ## Descarga este complemento
 
 Para descargar directamente el complemento puedes dar click en el siguiente enlace:
-[Descargar última versión de Note diary](https://github.com/JohanAnim/Note-diary/raw/Note-diary-v2023.1/Note%20diary%20for%20NVDA-2023.1.nvda-addon)
+[Descargar última versión de Note diary](https://github.com/JohanAnim/Note-diary/releases/download/2023.1/Note.diary.for.NVDA-2023.1.nvda-addon)
 
 ## Colaboradores
 
