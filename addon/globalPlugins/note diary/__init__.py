@@ -16,7 +16,7 @@ import sys, os,config
 sys.path.append(os.path.dirname(__file__))
 from scriptHandler import script
 from .settings import noteDiarySettingsPanel
-from accessible import MenuAccessible
+from acccesibilidad import Accesibilidad
 import addonHandler
 addonHandler.initTranslation()
 
@@ -40,11 +40,12 @@ def crearCapitulo(diario, capitulo):
 	else: return False
 
 def guardarCapitulo(diario, capitulo, contenido):
-	with open(os.path.join(globalVars.appArgs.configPath, "diarios", diario, capitulo), "w") as f:
+	# Agregar la línea de codificación
+	with open(os.path.join(globalVars.appArgs.configPath, "diarios", diario, capitulo), "w", encoding='utf-8') as f:
 		f.write(contenido)
 
 def cargarCapitulo(diario, capitulo):
-	with open(os.path.join(globalVars.appArgs.configPath, "diarios", diario, capitulo), "r") as f:
+	with open(os.path.join(globalVars.appArgs.configPath, "diarios", diario, capitulo), "r", encoding='utf-8') as f:
 		return f.read()
 
 def eliminarDiario(diario):
@@ -152,10 +153,12 @@ class Dialogo(wx.Dialog):
 
 		# Translators: Label for the button menu
 		self.btn_menu = wx.Button(self.mainPanel, wx.ID_ANY, label=_("&Más opciones"), pos=(10, 10))
-		self.Bind(wx.EVT_BUTTON, self.onMenu, self.btn_menu)
-		# evento para abrir el menú con la tecla flecha abajo
+		# los eventos del menú
+		self.btn_menu.Bind(wx.EVT_BUTTON, self.onMenu)
 		self.btn_menu.Bind(wx.EVT_CHAR_HOOK, self.onCharHook)
-		self.btn_menu.SetAccessible(MenuAccessible(self.btn_menu))
+		self.menu_accesible = Accesibilidad(nombre=_("Más opciones"), descripcion=_("Abre el menú de opciones"), estado=wx.ACC_STATE_SYSTEM_COLLAPSED, role=wx.ROLE_SYSTEM_BUTTONMENU)
+		# aplicar la accesibilidad
+		self.btn_menu.SetAccessible(self.menu_accesible)
 
 		# Translator: Label for the tree
 		self.label = wx.StaticText(self.mainPanel, label=_("&Diarios"))
@@ -190,6 +193,10 @@ class Dialogo(wx.Dialog):
 	def onMenu(self, event):
 		# create a menu
 		menu = wx.Menu()
+		# evento para cuadno el menú se abre
+		menu.Bind(wx.EVT_MENU_OPEN, self.onMenuOpen)
+		# cuando el menú se cierra
+		menu.Bind(wx.EVT_MENU_CLOSE, self.onMenuClose)
 		# Translators: Label for the menu item to create a diary
 		nuevo_diario = menu.Append(wx.ID_ANY, _("Nuevo diario"))
 		self.Bind(wx.EVT_MENU, self.onNuevoDiario, nuevo_diario)
@@ -216,9 +223,18 @@ class Dialogo(wx.Dialog):
 		self.PopupMenu(menu, self.btn_menu.GetPosition())
 		menu.Destroy()
 
+	def onMenuOpen(self, event):
+		# cambiar el estado del menú de contraído a expandido
+		self.menu_accesible.SetEstado(wx.ACC_STATE_SYSTEM_EXPANDED)
+
+	def onMenuClose(self, event):
+		# cambiar el estado del menú de expandido a contraído
+		self.menu_accesible.SetEstado(wx.ACC_STATE_SYSTEM_COLLAPSED)
+
 	def onCharHook(self, event):
 		if event.GetKeyCode() == wx.WXK_DOWN:
 			self.onMenu(event)
+
 		else:
 			event.Skip()
 
@@ -357,13 +373,30 @@ class Dialogo(wx.Dialog):
 			self.editor = wx.TextCtrl(self.dlg_editor, style=wx.TE_MULTILINE)
 			self.editor.SetValue(cargarCapitulo(self.diario, self.capitulo))
 			self.editor.SetFocus()
-			# evento para detectar cuando se edite en el campo de texto
 			self.editor.Bind(wx.EVT_TEXT, self.onEditarTexto)
 			self.esta_editado = False
 			self.reproducirSonido("editar-cap")
 
+			# translators: label of the button to show the copy options
+			self.btn_opciones_copiado = wx.Button(self.dlg_editor, label=_("Opciones de copiado"))
+			self.btn_opciones_copiado_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion=_(""), role=wx.ROLE_SYSTEM_PUSHBUTTON, estado=wx.ACC_STATE_SYSTEM_FOCUSED | wx.ACC_STATE_SYSTEM_FOCUSABLE | wx.ACC_STATE_SYSTEM_COLLAPSED)
+			self.btn_opciones_copiado.SetAccessible(self.btn_opciones_copiado_accesible)
+			self.btn_opciones_copiado.Bind(wx.EVT_BUTTON, self.onOpcionesCopiado)
+			# desabilitar el botón de opciones de copiado sino hay texto en el campo de texto
+			if self.editor.GetValue() == "": self.btn_opciones_copiado.Disable()
+			else: self.btn_opciones_copiado.Enable()
+
+			# la caja de agrupación
+			self.caja_agrupacion = wx.Panel(self.dlg_editor)
+			self.caja_agrupacion_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion=_(""), role=wx.ROLE_SYSTEM_GROUPING, estado=wx.ACC_STATE_SYSTEM_FOCUSED)
+			self.caja_agrupacion.SetAccessible(self.caja_agrupacion_accesible)
+			self.caja_agrupacion.Hide()
+
+			# crear el botón de copiar la línea actual
+			self.btn_copiar = wx.Button(self.caja_agrupacion, label=_("Copiar la línea actual &al portapapeles"))
+			self.btn_copiar.Bind(wx.EVT_BUTTON, self.onCopiarLinea)
 			# Translators: label of the button to copy the chapter to the clipboard
-			self.btn_copiar = wx.Button(self.dlg_editor, label=_("Co&piar"))
+			self.btn_copiar = wx.Button(self.caja_agrupacion, label=_("Co&piar todo el documento"))
 			self.btn_copiar.Bind(wx.EVT_BUTTON, self.onCopiarCap)
 
 			# Translators: label of the button to save the chapter
@@ -377,7 +410,8 @@ class Dialogo(wx.Dialog):
 
 			# los sizers
 			self.sizer_btn = wx.BoxSizer(wx.HORIZONTAL)
-			self.sizer_btn.Add(self.btn_copiar, 0, wx.ALL, 5)
+			self.sizer_btn.Add(self.btn_opciones_copiado, 0, wx.ALL, 5)
+			self.sizer_btn.Add(self.caja_agrupacion, 0, wx.ALL, 5)
 			self.sizer_btn.Add(self.btn_guardar, 0, wx.ALL, 5)
 			self.sizer_btn.Add(self.btn_cerrar, 0, wx.ALL, 5)
 			self.sizer_editor = wx.BoxSizer(wx.VERTICAL)
@@ -387,6 +421,34 @@ class Dialogo(wx.Dialog):
 			# establecer el sizer
 			self.dlg_editor.SetSizer(self.sizer_editor)
 			self.dlg_editor.ShowModal()
+
+	def onOpcionesCopiado(self, event):
+		# mostrar o ocultar la caja de agrupación dependiendo si está expandido o no
+		if self.caja_agrupacion.IsShown():
+			self.caja_agrupacion.Hide()
+			# cambiar el estado del botón
+			self.btn_opciones_copiado_accesible.SetEstado(wx.ACC_STATE_SYSTEM_COLLAPSED)
+		else:
+			self.caja_agrupacion.Show()
+			# cambiar el estado del botón
+			self.btn_opciones_copiado_accesible.SetEstado(wx.ACC_STATE_SYSTEM_EXPANDED)
+
+
+	def onCopiarLinea(self, event):
+		# optener la línea en que el usuario a posicionado el cursor
+		pos_cursor = self.editor.GetInsertionPoint()
+		num_lineas = self.editor.GetNumberOfLines()
+		for num_linea in range(num_lineas):
+			inicio_linea = self.editor.XYToPosition(0, num_linea)
+			fin_linea = self.editor.XYToPosition(self.editor.GetLineLength(num_linea), num_linea)
+			if inicio_linea <= pos_cursor <= fin_linea:
+				linea = self.editor.GetRange(inicio_linea, fin_linea)
+				# copiar la línea al portapapeles
+				wx.TheClipboard.Open()
+				wx.TheClipboard.SetData(wx.TextDataObject(linea))
+				wx.TheClipboard.Close()
+				ui.reportTextCopiedToClipboard(linea)
+				return
 
 	def onCopiarCap(self, event):
 		# copiar el contenido del capítulo al portapapeles
@@ -409,6 +471,9 @@ class Dialogo(wx.Dialog):
 
 	def onEditarTexto(self, event):
 		self.esta_editado = True
+		# desabilitar el botón de opciones de copiado sino hay texto en el campo de texto
+		if self.editor.GetValue() == "": self.btn_opciones_copiado.Disable()
+		else: self.btn_opciones_copiado.Enable()
 
 	def onCerrarEditor(self, event):
 		if self.esta_editado:
@@ -500,35 +565,44 @@ class Dialogo(wx.Dialog):
 		self.tree.SetFocus()
 		ui.message(_("Se	ha actualizado la ventana"))
 		time.sleep(1)
-		
 
 	def onFoco(self, event=None):
-		if self.tree.GetItemParent(self.tree.GetSelection()) != self.root:
-			self.reproducirSonido("pasar-cap")
-			# optener los datos del capítulo como el nombre, el diario la fecha y el número de páginas
-			self.name_cap = self.tree.GetItemText(self.tree.GetSelection())
-			self.name_diario = self.tree.GetItemText(self.tree.GetItemParent(self.tree.GetSelection()))
-			self.dir_diario = os.path.join(os.path.dirname(globalVars.appArgs.configPath), "nvda/diarios", self.name_diario)
-			self.dir_capitulo = os.path.join(self.dir_diario, self.name_cap)
-			# optener la fecha de creación del capítulo
-			self.fecha = time.strftime("%d/%m/%Y", time.localtime(os.path.getctime(self.dir_capitulo)))
-			self.fecha_mod = time.strftime("%d/%m/%Y", time.localtime(os.path.getmtime(self.dir_capitulo)))
-			#self.num_lineas = len(open(self.dir_capitulo, "r").readlines())
-			self.num_paginas = len(open(self.dir_capitulo, "r").readlines())//50+1
-			# mostrar los datos en el campo de texto
-			info = _("Capítulo: ") + self.name_cap + "\n" + _("Pertenese al diario: ") + self.name_diario + "\n" + _("Fecha de creación: ") + self.fecha + "\n" + _("Fecha de modificación: ") + self.fecha_mod + "\n" + _("Número de páginas: ") + str(self.num_paginas)
-			self.info.SetValue(info)
-		else:
+		if not self.tree or self.tree.IsBeingDeleted() or not self.tree.GetSelection():
+			return
+
+		selected_item = self.tree.GetSelection()
+		parent_item = self.tree.GetItemParent(selected_item)
+
+		if parent_item == self.root:
 			self.reproducirSonido("pasar-diario")
-			# optener los datos del diario como el nombre y el número de capítulos
-			self.name_diario = self.tree.GetItemText(self.tree.GetSelection())
-			self.dir_diario = os.path.join(os.path.dirname(globalVars.appArgs.configPath), "nvda/diarios", self.name_diario)
-			self.fecha = time.strftime("%d/%m/%Y", time.localtime(os.path.getctime(self.dir_diario)))
-			self.fecha_mod = time.strftime("%d/%m/%Y", time.localtime(os.path.getmtime(self.dir_diario)))
-			self.num_capitulos = len(os.listdir(self.dir_diario))
+
+			# obtener los datos del diario
+			name_diario = self.tree.GetItemText(selected_item)
+			dir_diario = os.path.join(os.path.dirname(globalVars.appArgs.configPath), "nvda/diarios", name_diario)
+			fecha = time.strftime("%d/%m/%Y", time.localtime(os.path.getctime(dir_diario)))
+			fecha_mod = time.strftime("%d/%m/%Y", time.localtime(os.path.getmtime(dir_diario)))
+			num_capitulos = len(os.listdir(dir_diario))
+
 			# mostrar los datos en el campo de texto de info
-			info = _("Nombre del diario: ") + self.name_diario + "\n" + _("Fecha de creación: ") + self.fecha + "\n" + _("Fecha de modificación: ") + self.fecha_mod + "\n" + _("Número de capítulos: ") + str(self.num_capitulos)
+			info = _("Nombre del diario: {0}\nFecha de creación: {1}\nFecha de modificación: {2}\nNúmero de capítulos: {3}").format(name_diario, fecha, fecha_mod, num_capitulos)
 			self.info.SetValue(info)
+
+		else:
+			self.reproducirSonido("pasar-cap")
+
+			# obtener los datos del capítulo
+			name_cap = self.tree.GetItemText(selected_item)
+			name_diario = self.tree.GetItemText(parent_item)
+			dir_diario = os.path.join(os.path.dirname(globalVars.appArgs.configPath), "nvda/diarios", name_diario)
+			dir_capitulo = os.path.join(dir_diario, name_cap)
+			fecha = time.strftime("%d/%m/%Y", time.localtime(os.path.getctime(dir_capitulo)))
+			fecha_mod = time.strftime("%d/%m/%Y", time.localtime(os.path.getmtime(dir_capitulo)))
+			num_lineas = sum(1 for line in open(dir_capitulo, "r", encoding="utf-8"))
+			num_paginas = (num_lineas // 50) + 1
+
+			# mostrar los datos en el campo de texto de info
+			info = _("Capítulo: {0}\nPertenece al diario: {1}\nFecha de creación: {2}\nFecha de modificación: {3}\nNúmero de páginas: {4}").format(name_cap, name_diario, fecha, fecha_mod, num_paginas)
+			self.info.SetValue(info)	
 
 	def onAcercaDe(self, event):
 		# optener el contenido de el archivo manifest
