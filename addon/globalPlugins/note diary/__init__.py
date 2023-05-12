@@ -12,6 +12,7 @@ import ui
 import api
 import time
 import zipfile
+import locale
 import sys, os,config
 sys.path.append(os.path.dirname(__file__))
 from scriptHandler import script
@@ -379,7 +380,7 @@ class Dialogo(wx.Dialog):
 
 			# translators: label of the button to show the copy options
 			self.btn_opciones_copiado = wx.Button(self.dlg_editor, label=_("Opciones de copiado"))
-			self.btn_opciones_copiado_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion=_(""), role=wx.ROLE_SYSTEM_PUSHBUTTON, estado=wx.ACC_STATE_SYSTEM_FOCUSED | wx.ACC_STATE_SYSTEM_FOCUSABLE | wx.ACC_STATE_SYSTEM_COLLAPSED)
+			self.btn_opciones_copiado_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion="", role=wx.ROLE_SYSTEM_PUSHBUTTON, estado=wx.ACC_STATE_SYSTEM_FOCUSED | wx.ACC_STATE_SYSTEM_FOCUSABLE | wx.ACC_STATE_SYSTEM_COLLAPSED)
 			self.btn_opciones_copiado.SetAccessible(self.btn_opciones_copiado_accesible)
 			self.btn_opciones_copiado.Bind(wx.EVT_BUTTON, self.onOpcionesCopiado)
 			# desabilitar el botón de opciones de copiado sino hay texto en el campo de texto
@@ -388,11 +389,11 @@ class Dialogo(wx.Dialog):
 
 			# la caja de agrupación
 			self.caja_agrupacion = wx.Panel(self.dlg_editor)
-			self.caja_agrupacion_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion=_(""), role=wx.ROLE_SYSTEM_GROUPING, estado=wx.ACC_STATE_SYSTEM_FOCUSED)
+			self.caja_agrupacion_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion="", role=wx.ROLE_SYSTEM_GROUPING, estado=wx.ACC_STATE_SYSTEM_FOCUSED)
 			self.caja_agrupacion.SetAccessible(self.caja_agrupacion_accesible)
 			self.caja_agrupacion.Hide()
 
-			# crear el botón de copiar la línea actual
+			# Translators: label of the button to copy the current line to the clipboard
 			self.btn_copiar = wx.Button(self.caja_agrupacion, label=_("Copiar la línea actual &al portapapeles"))
 			self.btn_copiar.Bind(wx.EVT_BUTTON, self.onCopiarLinea)
 			# Translators: label of the button to copy the chapter to the clipboard
@@ -628,8 +629,18 @@ class Dialogo(wx.Dialog):
 		wx.adv.AboutBox(self.dlg_acercaDe)
 
 	def onDocumentacion(self, event):
-		# buscar el archivo fuera del directorio del script prinsipal
-		doc = os.path.join(os.path.dirname(__file__), "../", "../", "doc", "es", "readme.html")
+		# Obtener el idioma actual del sistema
+		idioma = locale.getdefaultlocale()[0]
+		addon_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+		# si está en alguna bariante de español como español colombia o cualquier otro entonses es "es"
+		if idioma.startswith("es") or idioma.startswith("es_CO") or idioma.startswith("es_MX") or idioma.startswith("es_ES"):
+			idioma = "es"
+		elif idioma.startswith("en") or idioma.startswith("en_US") or idioma.startswith("en_GB"):
+			idioma = "en"
+		else:
+			idioma = "en"
+		# ruta del archivo de documentación
+		doc = os.path.join(addon_dir, "doc", idioma, "readme.html")
 		# abrir el archivo en el navegador predeterminado
 		os.startfile(doc)
 
