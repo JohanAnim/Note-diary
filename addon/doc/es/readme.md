@@ -79,6 +79,7 @@ Para descargar directamente el complemento puedes dar click en el siguiente enla
 
 créditos a los siguientes usuarios por colaborar con parte del código fuente y con algunas funcionalidades del mismo:
 funcionalidades del mismo:
+
 * [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Implementó la parte inicial de este complemento.
 * [metalalchemist](https://github.com/metalalchemist/): Implementación de algunas de las funcionalidades del complemento.
 
