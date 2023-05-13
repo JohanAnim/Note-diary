@@ -12,7 +12,6 @@ import ui
 import api
 import time
 import zipfile
-import locale
 import sys, os,config
 sys.path.append(os.path.dirname(__file__))
 from scriptHandler import script
@@ -629,20 +628,15 @@ class Dialogo(wx.Dialog):
 		wx.adv.AboutBox(self.dlg_acercaDe)
 
 	def onDocumentacion(self, event):
-		# Obtener el idioma actual del sistema
-		idioma = locale.getdefaultlocale()[0]
 		addon_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-		# si está en alguna bariante de español como español colombia o cualquier otro entonses es "es"
-		if idioma.startswith("es") or idioma.startswith("es_CO") or idioma.startswith("es_MX") or idioma.startswith("es_ES"):
-			idioma = "es"
-		elif idioma.startswith("en") or idioma.startswith("en_US") or idioma.startswith("en_GB"):
-			idioma = "en"
-		else:
-			idioma = "en"
-		# ruta del archivo de documentación
-		doc = os.path.join(addon_dir, "doc", idioma, "readme.html")
-		# abrir el archivo en el navegador predeterminado
-		os.startfile(doc)
+		#nvda language.
+		idioma=globalVars.appArgs.language.lower()
+		if '_' in idioma:
+			idioma=idioma.split('_')
+			idioma=idioma[0]
+		#intentar abrir  el archivo en el navegador predeterminado con la ruta del idioma.
+		try: os.startfile(os.path.join(addon_dir, "doc", idioma, "readme.html"))
+		except: os.startfile(os.path.join(addon_dir, "doc", 'en', "readme.html"))
 
 	def onExit(self, event):
 		self.Destroy()
