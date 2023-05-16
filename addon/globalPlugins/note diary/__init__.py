@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2023 Johan G <gutierrezjohanantonio@gmail.com>
+# Copyright (C) 2023 Johan A G <gutierrezjohanantonio@gmail.com>
 # This file is covered by the GNU General Public License.
 
 import wx
@@ -133,6 +133,8 @@ class Dialogo(wx.Dialog):
 			"guardar-cap": "guardar-cap.wav",
 			"pasar-cap": "pasar-cap.wav",
 			"pasar-diario": "pasar-diario.wav",
+			"busqueda-exitosa": "busqueda_exitosa.wav",
+			"busqueda-fallida": "busqueda_fallida.wav",
 		}
 		if config.conf["Note"]["sounds"]:
 			if vul:
@@ -156,9 +158,29 @@ class Dialogo(wx.Dialog):
 		# los eventos del menú
 		self.btn_menu.Bind(wx.EVT_BUTTON, self.onMenu)
 		self.btn_menu.Bind(wx.EVT_CHAR_HOOK, self.onCharHook)
-		self.menu_accesible = Accesibilidad(nombre=_("Más opciones"), descripcion=_("Abre el menú de opciones"), estado=wx.ACC_STATE_SYSTEM_COLLAPSED, role=wx.ROLE_SYSTEM_BUTTONMENU)
+		self.menu_accesible = Accesibilidad(self.btn_menu)
+		self.menu_accesible.SetRole(wx.ROLE_SYSTEM_BUTTONMENU)
+		self.menu_accesible.SetEstado(wx.ACC_STATE_SYSTEM_COLLAPSED)
+		self.menu_accesible.SetNombre(_("Más opciones"))
+		self.menu_accesible.SetDescripcion(_("Abre el menú de opciones"))
 		# aplicar la accesibilidad
 		self.btn_menu.SetAccessible(self.menu_accesible)
+
+		# un panel para la búsqueda
+		self.panel_buscar = wx.Panel(self.mainPanel, pos=(10, 50), size=(480, 30))
+		# ponerle accesibilidad para que sea una caja de agrupación
+		self.agrupacion_buscar = Accesibilidad(self.panel_buscar)
+		self.agrupacion_buscar.SetRole(wx.ROLE_SYSTEM_GROUPING)
+		self.agrupacion_buscar.SetNombre(_("Búsqueda"))
+		self.panel_buscar.SetAccessible(self.agrupacion_buscar)
+
+		# Crear el campo de texto y el Choice
+		label_buscar = wx.StaticText(self.panel_buscar, label=_("Buscar:"))
+		self.text_ctrl = wx.TextCtrl(self.panel_buscar)
+		self.text_ctrl.Bind(wx.EVT_TEXT, self.onText)
+		label_filtro = wx.StaticText(self.panel_buscar, label=_("Filtrar por:"))
+		self.filter_choice = wx.Choice(self.panel_buscar, choices=["Diarios", "Capítulos"])
+		self.filter_choice.SetSelection(0)
 
 		# Translator: Label for the tree
 		self.label = wx.StaticText(self.mainPanel, label=_("&Diarios"))
@@ -183,7 +205,6 @@ class Dialogo(wx.Dialog):
 		self.info.SetInsertionPoint(0)
 		# estableser el ancho y el alto del control
 		self.info.SetSize((WIDTH - 20, 100))
-
 
 		# Translators: Label for the button to close the window
 		self.btnCerrar = wx.Button(self.mainPanel, id=wx.ID_CLOSE, label=_("&Cerrar"))
@@ -234,9 +255,53 @@ class Dialogo(wx.Dialog):
 	def onCharHook(self, event):
 		if event.GetKeyCode() == wx.WXK_DOWN:
 			self.onMenu(event)
-
 		else:
 			event.Skip()
+
+	def onText(self, event):
+		# Manejador del evento de texto
+		text = self.text_ctrl.GetValue().upper()
+		filter_type = self.filter_choice.GetString(self.filter_choice.GetSelection())
+
+		# Crear un diccionario para almacenar los diarios y capítulos que coinciden con la búsqueda
+		coincidencias = {}
+
+		# Filtrar los diarios y capítulos según el texto de búsqueda y el tipo de filtro
+		for diario in self.diarios:
+			if filter_type == "Capítulos":
+				coincidencias_capitulos = [capitulo for capitulo in enlistarCapitulos(diario) if text in capitulo.upper()]
+				if coincidencias_capitulos:
+					coincidencias[diario] = coincidencias_capitulos
+
+			elif text in diario.upper():
+				coincidencias[diario] = enlistarCapitulos(diario)
+
+		# Actualizar el árbol con los resultados de la búsqueda
+		self.tree.Freeze()
+		self.tree.DeleteAllItems()
+		self.root = self.tree.AddRoot("diarios")
+		for diario, capitulos in coincidencias.items():
+			diario_node = self.tree.AppendItem(self.root, diario)
+			for capitulo in capitulos:
+				self.tree.AppendItem(diario_node, capitulo)
+				self.text_ctrl.SetFocus()
+
+		# Reproducir un sonido según el resultado de la búsqueda
+		if coincidencias:
+			self.reproducirSonido("busqueda-exitosa")
+			# sacar la cantidad de diarios y capítulos que coinciden con la búsqueda
+			num_resultados = len(coincidencias)
+			if num_resultados == 1: wx.CallLater(100, lambda: ui.message(_("Se encontró {} resultado").format(num_resultados)))
+			else: wx.CallLater(100, lambda: ui.message(_("Se encontraron {} resultados").format(num_resultados)))
+		else:
+			self.reproducirSonido("busqueda-fallida")
+			wx.CallLater(100, lambda: ui.message(_("No se encontraron resultados")))
+
+		# Expandir todos los diarios que contienen coincidencias en el filtro de los caps
+		if filter_type == "Capítulos":
+			self.tree.ExpandAll()
+
+		self.tree.Thaw()
 
 	def onMenuContextual(self, event):
 		# crear un menú
@@ -379,7 +444,9 @@ class Dialogo(wx.Dialog):
 
 			# translators: label of the button to show the copy options
 			self.btn_opciones_copiado = wx.Button(self.dlg_editor, label=_("Opciones de copiado"))
-			self.btn_opciones_copiado_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion="", role=wx.ROLE_SYSTEM_PUSHBUTTON, estado=wx.ACC_STATE_SYSTEM_FOCUSED | wx.ACC_STATE_SYSTEM_FOCUSABLE | wx.ACC_STATE_SYSTEM_COLLAPSED)
+			self.btn_opciones_copiado_accesible = Accesibilidad(self.btn_opciones_copiado)
+			self.btn_opciones_copiado_accesible.SetRole(wx.ROLE_SYSTEM_PUSHBUTTON)
+			self.btn_opciones_copiado_accesible.SetEstado(wx.ACC_STATE_SYSTEM_FOCUSED | wx.ACC_STATE_SYSTEM_FOCUSABLE | wx.ACC_STATE_SYSTEM_COLLAPSED)
 			self.btn_opciones_copiado.SetAccessible(self.btn_opciones_copiado_accesible)
 			self.btn_opciones_copiado.Bind(wx.EVT_BUTTON, self.onOpcionesCopiado)
 			# desabilitar el botón de opciones de copiado sino hay texto en el campo de texto
@@ -388,7 +455,9 @@ class Dialogo(wx.Dialog):
 
 			# la caja de agrupación
 			self.caja_agrupacion = wx.Panel(self.dlg_editor)
-			self.caja_agrupacion_accesible = Accesibilidad(nombre=self.btn_opciones_copiado.GetLabel(), descripcion="", role=wx.ROLE_SYSTEM_GROUPING, estado=wx.ACC_STATE_SYSTEM_FOCUSED)
+			self.caja_agrupacion_accesible = Accesibilidad(self.caja_agrupacion)
+			self.caja_agrupacion_accesible.SetRole(wx.ROLE_SYSTEM_GROUPING)
+			self.caja_agrupacion_accesible.SetNombre(self.btn_opciones_copiado.GetLabel())
 			self.caja_agrupacion.SetAccessible(self.caja_agrupacion_accesible)
 			self.caja_agrupacion.Hide()
 

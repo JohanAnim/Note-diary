@@ -1,15 +1,18 @@
+# -*- coding: utf-8 -*-
+# Copyright (C) 2023 Johan A G <gutierrezjohanantonio@gmail.com>
+# This file is covered by the GNU General Public License.
 
 import wx
 
 class Accesibilidad(wx.Accessible):
-	def __init__(self, nombre, descripcion, role, estado):
-		wx.Accessible.__init__(self)
-		# optener el elemento actual que contiene la accesibilidad
-		self.objeto = self.GetWindow()
-		self.nombre = nombre
-		self.descripcion = descripcion
-		self.role = role
-		self.estado = estado
+	def __init__(self, win):
+		wx.Accessible.__init__(self, win=win)
+		# optener el objeto actual que contiene la accesibilidad
+		self.objeto = win
+		self.nombre = self.objeto.GetLabel()
+		self.descripcion = ""
+		self.role = wx.ROLE_NONE
+		self.estado = wx.ACC_STATE_SYSTEM_DEFAULT
 
 	def GetRole(self, childId):
 		return (wx.ACC_OK, self.role)
@@ -34,8 +37,6 @@ class Accesibilidad(wx.Accessible):
 
 	def SetEstado(self, estado):
 		self.estado = estado
-		# anunciar al lector de pantalla cuando el estado cambia
-		wx.NotifyEvent(wx.ACC_EVENT_OBJECT_STATECHANGE, wx.ACC_STATE_SYSTEM_COLLAPSED if self.estado == wx.ACC_STATE_SYSTEM_COLLAPSED else wx.ACC_STATE_SYSTEM_EXPANDED)
 
 	# metodos para optener el nombre actual del objeto, la descripcion, el role y el estado
 	def GetNombre(self):

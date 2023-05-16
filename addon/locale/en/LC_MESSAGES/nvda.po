@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Note Diary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 23:45-0500\n"
-"PO-Revision-Date: 2023-05-12 00:12-0500\n"
+"POT-Creation-Date: 2023-05-15 00:32-0500\n"
+"PO-Revision-Date: 2023-05-15 00:34-0500\n"
 "Last-Translator: \n"
 "Language-Team: Johan G\n"
 "Language: en\n"
@@ -21,96 +21,120 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: addon/globalPlugins/note diary/__init__.py:83 diary/__init__.py:110
-#: diary/__init__.py:150 buildVars.py:23
+#: addon/globalPlugins/note diary/__init__.py:82 diary/__init__.py:109
+#: diary/__init__.py:151 buildVars.py:23
 msgid "Note diary"
 msgstr "Note diary"
 
-#: addon/globalPlugins/note diary/__init__.py:83
+#: addon/globalPlugins/note diary/__init__.py:82
 msgid "Abrir la ventana de Note diary"
 msgstr "Open the Note diary window"
 
-#: addon/globalPlugins/note diary/__init__.py:106
+#: addon/globalPlugins/note diary/__init__.py:105
 msgid "Ya hay una instancia de Note\tdiary abierta"
 msgstr "There is already an instance of Note diary open"
 
-#: addon/globalPlugins/note diary/__init__.py:108
+#: addon/globalPlugins/note diary/__init__.py:107
 msgid "Abrir la lista de diarios"
 msgstr "Open the diary list"
 
-#: addon/globalPlugins/note diary/__init__.py:156
+#: addon/globalPlugins/note diary/__init__.py:157
 msgid "&Más opciones"
 msgstr "&More options"
 
-#: addon/globalPlugins/note diary/__init__.py:160
+#: addon/globalPlugins/note diary/__init__.py:164
 msgid "Más opciones"
 msgstr "More options"
 
-#: addon/globalPlugins/note diary/__init__.py:160
+#: addon/globalPlugins/note diary/__init__.py:165
 msgid "Abre el menú de opciones"
 msgstr "Open the options menu"
 
-#: addon/globalPlugins/note diary/__init__.py:165
+#: addon/globalPlugins/note diary/__init__.py:174
+msgid "Búsqueda"
+msgstr "Search"
+
+#: addon/globalPlugins/note diary/__init__.py:178
+msgid "Buscar:"
+msgstr "Look for:"
+
+#: addon/globalPlugins/note diary/__init__.py:181
+msgid "Filtrar por:"
+msgstr "Filter by:"
+
+#: addon/globalPlugins/note diary/__init__.py:186
 msgid "&Diarios"
 msgstr "&diaries"
 
-#: addon/globalPlugins/note diary/__init__.py:181
+#: addon/globalPlugins/note diary/__init__.py:202
 msgid "&Información"
 msgstr "&Information"
 
-#: addon/globalPlugins/note diary/__init__.py:183
+#: addon/globalPlugins/note diary/__init__.py:204
 msgid "Seleccione un diario o un capítulo para ver su información"
 msgstr "Select a diary or chapter to see its information"
 
-#: addon/globalPlugins/note diary/__init__.py:190 diary/__init__.py:408
+#: addon/globalPlugins/note diary/__init__.py:210 diary/__init__.py:476
 msgid "&Cerrar"
 msgstr "&Close"
 
-#: addon/globalPlugins/note diary/__init__.py:202 diary/__init__.py:270
+#: addon/globalPlugins/note diary/__init__.py:222 diary/__init__.py:334
 msgid "Nuevo diario"
 msgstr "New diary"
 
-#: addon/globalPlugins/note diary/__init__.py:205 diary/__init__.py:286
+#: addon/globalPlugins/note diary/__init__.py:225 diary/__init__.py:350
 msgid "Nuevo capítulo"
 msgstr "New chapter"
 
-#: addon/globalPlugins/note diary/__init__.py:208 diary/__init__.py:318
+#: addon/globalPlugins/note diary/__init__.py:228 diary/__init__.py:382
 msgid "Importar diarios"
 msgstr "import diaries"
 
-#: addon/globalPlugins/note diary/__init__.py:211 diary/__init__.py:301
+#: addon/globalPlugins/note diary/__init__.py:231 diary/__init__.py:365
 msgid "Exportar diarios"
 msgstr "Export diaries"
 
-#: addon/globalPlugins/note diary/__init__.py:216
+#: addon/globalPlugins/note diary/__init__.py:236
 msgid "Acerca de..."
 msgstr "About..."
 
-#: addon/globalPlugins/note diary/__init__.py:219
+#: addon/globalPlugins/note diary/__init__.py:239
 msgid "Documentación"
 msgstr "Documentation"
 
-#: addon/globalPlugins/note diary/__init__.py:222
+#: addon/globalPlugins/note diary/__init__.py:242
 msgid "Ayuda"
 msgstr "Help"
 
-#: addon/globalPlugins/note diary/__init__.py:247
+#: addon/globalPlugins/note diary/__init__.py:294
+msgid "Se encontró {} resultado"
+msgstr "found {} result"
+
+#: addon/globalPlugins/note diary/__init__.py:295
+msgid "Se encontraron {} resultados"
+msgstr "{} results were found"
+
+#: addon/globalPlugins/note diary/__init__.py:298
+msgid "No se encontraron resultados"
+msgstr "No results found"
+
+#: addon/globalPlugins/note diary/__init__.py:311
 msgid "Editar...\tIntro"
 msgstr "Edit...\t Enter"
 
-#: addon/globalPlugins/note diary/__init__.py:250
+#: addon/globalPlugins/note diary/__init__.py:314
 msgid "Eliminar...\tSuprimir"
 msgstr "Delete…\t Delete"
 
-#: addon/globalPlugins/note diary/__init__.py:253
+#: addon/globalPlugins/note diary/__init__.py:317
 msgid "Renombrar...\tF2"
 msgstr "Rename…\t F2"
 
-#: addon/globalPlugins/note diary/__init__.py:270
+#: addon/globalPlugins/note diary/__init__.py:334
 msgid "Introduce el nombre del diario"
 msgstr "Enter the name of the diary"
 
-#: addon/globalPlugins/note diary/__init__.py:276
+#: addon/globalPlugins/note diary/__init__.py:340
 msgid ""
 "al parecer este diario ya  existe.\n"
 "revise que el nombre no coinsida con otro diario."
@@ -118,7 +142,7 @@ msgstr ""
 "Apparently this journal already exists.\n"
 "Check that the name does not coincide with another journal."
 
-#: addon/globalPlugins/note diary/__init__.py:283
+#: addon/globalPlugins/note diary/__init__.py:347
 msgid ""
 "No hay ningún diario.\n"
 "Por favor cree uno nuevo."
@@ -126,16 +150,16 @@ msgstr ""
 "There is no diary.\n"
 "Please create a new one."
 
-#: addon/globalPlugins/note diary/__init__.py:283 diary/__init__.py:292
-#: diary/__init__.py:297 diary/__init__.py:327 diary/__init__.py:332
+#: addon/globalPlugins/note diary/__init__.py:347 diary/__init__.py:356
+#: diary/__init__.py:361 diary/__init__.py:391 diary/__init__.py:396
 msgid "Error"
 msgstr "Error"
 
-#: addon/globalPlugins/note diary/__init__.py:286
+#: addon/globalPlugins/note diary/__init__.py:350
 msgid "Introduce el nombre del capítulo"
 msgstr "Enter the chapter name"
 
-#: addon/globalPlugins/note diary/__init__.py:292
+#: addon/globalPlugins/note diary/__init__.py:356
 msgid ""
 "al parecer este capítulo ya  existe.\n"
 "revise que el nombre no coinsida con otro capítulo."
@@ -143,93 +167,92 @@ msgstr ""
 "Apparently this chapter already exists.\n"
 "check that the name does not coincide with another chapter."
 
-#: addon/globalPlugins/note diary/__init__.py:297
+#: addon/globalPlugins/note diary/__init__.py:361
 msgid "Debe seleccionar un diario para crear un nuevo capítulo"
 msgstr "You must select a diary to create a new chapter"
 
-#: addon/globalPlugins/note diary/__init__.py:327
+#: addon/globalPlugins/note diary/__init__.py:391
 msgid "El archivo está dañado"
 msgstr "The file is damaged"
 
-#: addon/globalPlugins/note diary/__init__.py:332
+#: addon/globalPlugins/note diary/__init__.py:396
 msgid "El archivo está vacío"
 msgstr "the file is empty"
 
-#: addon/globalPlugins/note diary/__init__.py:338
+#: addon/globalPlugins/note diary/__init__.py:402
 #, python-format
 msgid "¿el archivo con el nombre %s ya existe, te gustaría importarlo aún así?"
-msgstr ""
-"the file with name %s already exists, would you still like to import it?"
+msgstr "the file with name %s already exists, would you still like to import it?"
 
-#: addon/globalPlugins/note diary/__init__.py:338
+#: addon/globalPlugins/note diary/__init__.py:402
 msgid "Archivo existente"
 msgstr "existing file"
 
-#: addon/globalPlugins/note diary/__init__.py:347
+#: addon/globalPlugins/note diary/__init__.py:411
 msgid "El archivo se importó correctamente"
 msgstr "The file was imported successfully"
 
-#: addon/globalPlugins/note diary/__init__.py:347
+#: addon/globalPlugins/note diary/__init__.py:411
 msgid "Éxito"
 msgstr "Success"
 
-#: addon/globalPlugins/note diary/__init__.py:371
+#: addon/globalPlugins/note diary/__init__.py:435
 msgid "Editando el capítulo: "
 msgstr "Editing the chapter:"
 
-#: addon/globalPlugins/note diary/__init__.py:373
+#: addon/globalPlugins/note diary/__init__.py:437
 msgid "Conte&nido:"
 msgstr "Conte&nt:"
 
-#: addon/globalPlugins/note diary/__init__.py:382
+#: addon/globalPlugins/note diary/__init__.py:446
 msgid "Opciones de copiado"
 msgstr "Copy options"
 
-#: addon/globalPlugins/note diary/__init__.py:397
+#: addon/globalPlugins/note diary/__init__.py:465
 msgid "Copiar la línea actual &al portapapeles"
 msgstr "Copy current line to the clipbo&ard"
 
-#: addon/globalPlugins/note diary/__init__.py:400
+#: addon/globalPlugins/note diary/__init__.py:468
 msgid "Co&piar todo el documento"
 msgstr "Co&py entire document"
 
-#: addon/globalPlugins/note diary/__init__.py:404
+#: addon/globalPlugins/note diary/__init__.py:472
 msgid "&Guardar"
 msgstr "&Save"
 
-#: addon/globalPlugins/note diary/__init__.py:482
+#: addon/globalPlugins/note diary/__init__.py:550
 msgid "El capítulo a sido editado, ¿desea guardar los cambios?"
 msgstr "The chapter has been edited, do you want to save the changes?"
 
-#: addon/globalPlugins/note diary/__init__.py:482
+#: addon/globalPlugins/note diary/__init__.py:550
 msgid "Guardar"
 msgstr "Save"
 
-#: addon/globalPlugins/note diary/__init__.py:499
+#: addon/globalPlugins/note diary/__init__.py:567
 msgid "¿Está seguro de que desea eliminar el diario "
 msgstr "Are you sure you want to delete the journal"
 
-#: addon/globalPlugins/note diary/__init__.py:499
+#: addon/globalPlugins/note diary/__init__.py:567
 msgid "Eliminar diario"
 msgstr "delete journal"
 
-#: addon/globalPlugins/note diary/__init__.py:514
+#: addon/globalPlugins/note diary/__init__.py:582
 msgid "¿Está seguro de que desea eliminar el capítulo "
 msgstr "Are you sure you want to delete the chapter"
 
-#: addon/globalPlugins/note diary/__init__.py:514
+#: addon/globalPlugins/note diary/__init__.py:582
 msgid "Eliminar capítulo"
 msgstr "delete chapter"
 
-#: addon/globalPlugins/note diary/__init__.py:527 diary/__init__.py:539
+#: addon/globalPlugins/note diary/__init__.py:595 diary/__init__.py:607
 msgid "&Renombrar"
 msgstr "&rename"
 
-#: addon/globalPlugins/note diary/__init__.py:567
+#: addon/globalPlugins/note diary/__init__.py:635
 msgid "Se\tha actualizado la ventana"
 msgstr "window has been updated"
 
-#: addon/globalPlugins/note diary/__init__.py:588
+#: addon/globalPlugins/note diary/__init__.py:656
 #, python-brace-format
 msgid ""
 "Nombre del diario: {0}\n"
@@ -242,7 +265,7 @@ msgstr ""
 "Modification date: {2}\n"
 "Number of chapters: {3}"
 
-#: addon/globalPlugins/note diary/__init__.py:605
+#: addon/globalPlugins/note diary/__init__.py:673
 #, python-brace-format
 msgid ""
 "Capítulo: {0}\n"
@@ -257,11 +280,11 @@ msgstr ""
 "Modification date: {3}\n"
 "Number of pages: {4}"
 
-#: addon/globalPlugins/note diary/__init__.py:625
+#: addon/globalPlugins/note diary/__init__.py:693
 msgid "Verción actual: "
 msgstr "Current version:"
 
-#: addon/globalPlugins/note diary/__init__.py:626
+#: addon/globalPlugins/note diary/__init__.py:694
 msgid "Descripción: "
 msgstr "Description:"
 
@@ -275,22 +298,20 @@ msgstr "activate sounds"
 
 #: buildVars.py:26
 msgid ""
-"Este complemento te permite tener un espacio para guardar tus notas muy "
-"rápidamente con mucha eficiencia.\n"
+"Este complemento te permite tener un espacio para guardar tus notas muy rápidamente con mucha eficiencia.\n"
 "\t\tEscribe, accede, guarda y borra tus notas con tan solo un par de teclas."
 msgstr ""
-"This plugin allows you to have a space to save your notes very quickly with "
-"a lot of efficiency.\n"
+"This plugin allows you to have a space to save your notes very quickly with a lot of efficiency.\n"
 "Write, access, save and delete your notes with just a couple of keys."
 
 #~ msgid "Co&piar"
-#~ msgstr "Co&py"
+#~ msgstr "Copy"
 
 #~ msgid "Capítulo: "
 #~ msgstr "Chapter:"
 
 #~ msgid "Pertenese al diario: "
-#~ msgstr "Belong to the diary:"
+#~ msgstr "Belong to the newspaper:"
 
 #~ msgid "Fecha de creación: "
 #~ msgstr "Creation date:"
@@ -302,7 +323,7 @@ msgstr ""
 #~ msgstr "Number of pages:"
 
 #~ msgid "Nombre del diario: "
-#~ msgstr "diary name:"
+#~ msgstr "Journal name:"
 
 #~ msgid "Número de capítulos: "
 #~ msgstr "Number of chapters:"
