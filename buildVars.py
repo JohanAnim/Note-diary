@@ -23,10 +23,9 @@ addon_info = {
 	"addon_summary": _("Note diary"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""Este complemento te permite tener un espacio para guardar tus notas muy rápidamente con mucha eficiencia.
-		Escribe, accede, guarda y borra tus notas con tan solo un par de teclas."""),
+	"addon_description": _("""Este complemento te permite tener un espacio para guardar tus notas muy rápidamente con mucha eficiencia. Escribe, accede, guarda y borra tus notas con tan solo un par de teclas."""),
 	# version
-	"addon_version": "2023.1",
+	"addon_version": "2023.2.0",
 	# Author(s)
 	"addon_author": "Johan G <gutierrezjohanantonio@gmail.com>",
 	# URL for the add-on documentation support

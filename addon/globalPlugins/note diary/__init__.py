@@ -564,7 +564,7 @@ class Dialogo(wx.Dialog):
 		self.contar_capitulos = self.tree.GetChildrenCount(self.tree.GetSelection())
 		if self.tree.GetItemParent(self.tree.GetSelection()) == self.root:
 			# Translators: title of the dialog to delete a diary
-			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el diario " + self.diario + "? \nTome en cuenta que esta acción no es rebersible, y que también eliminará todos los capítulos del diario"), _("Eliminar diario"), wx.YES_NO | wx.ICON_ASTERISK)
+			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el diario ") + self.diario + _("? \nTome en cuenta que esta acción no es rebersible, y que también eliminará todos los capítulos del diario"), _("Eliminar diario"), wx.YES_NO | wx.ICON_ASTERISK)
 			if self.dlg_eliminar.ShowModal() == wx.ID_YES:
 				# eliminar el diario
 				eliminarDiario(self.diario, )
@@ -579,7 +579,7 @@ class Dialogo(wx.Dialog):
 			self.diario = self.tree.GetItemText(self.tree.GetItemParent(self.tree.GetSelection()))
 			self.capitulo = self.tree.GetItemText(self.tree.GetSelection())
 			# Translators: title of the dialog to delete a chapter
-			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el capítulo " + self.capitulo + "?"), _("Eliminar capítulo"), wx.YES_NO | wx.ICON_ASTERISK)
+			self.dlg_eliminar = wx.MessageDialog(self, _("¿Está seguro de que desea eliminar el capítulo ") + self.capitulo + "?", _("Eliminar capítulo"), wx.YES_NO | wx.ICON_ASTERISK)
 			if self.dlg_eliminar.ShowModal() == wx.ID_YES:
 				eliminarCapitulo(self.diario, self.capitulo)
 				self.tree.Delete(self.tree.GetSelection())
@@ -589,9 +589,10 @@ class Dialogo(wx.Dialog):
 	def onRenombrar(self, event):
 		if self.tree.GetItemParent(self.tree.GetSelection()) == self.root:
 			self.diario = self.tree.GetItemText(self.tree.GetSelection())
-			# crear un cuadro de diálogo para ingresar el nuevo nombre del diario
-			self.dlg_renombrar = wx.TextEntryDialog(self, "Ingrese el nuevo nombre del diario", "Renombrar diario", self.diario)
+			# Translators: title of the dialog to rename a diary
+			self.dlg_renombrar = wx.TextEntryDialog(self, _("Ingrese el nuevo nombre del diario"), _("Renombrar diario"), self.diario)
 			self.btn_ok = self.dlg_renombrar.FindWindowById(wx.ID_OK)
+			# Translators: label of the button to rename a diary
 			self.btn_ok.SetLabel(_("&Renombrar"))
 			if self.dlg_renombrar.ShowModal() == wx.ID_OK:
 				# renombrar el diario
@@ -601,9 +602,10 @@ class Dialogo(wx.Dialog):
 		else:
 			self.diario = self.tree.GetItemText(self.tree.GetItemParent(self.tree.GetSelection()))
 			self.capitulo = self.tree.GetItemText(self.tree.GetSelection())
-			# crear un cuadro de diálogo para ingresar el nuevo nombre del capítulo
-			self.dlg_renombrar = wx.TextEntryDialog(self, "Ingrese el nuevo nombre del capítulo", "Renombrar capítulo", self.capitulo)
+			# Translators: title of the dialog to rename a chapter
+			self.dlg_renombrar = wx.TextEntryDialog(self, _("Ingrese el nuevo nombre del capítulo"), _("Renombrar capítulo"), self.capitulo)
 			self.btn_ok = self.dlg_renombrar.FindWindowById(wx.ID_OK)
+			# Translators: label of the button to rename a chapter
 			self.btn_ok.SetLabel(_("&Renombrar"))
 			if self.dlg_renombrar.ShowModal() == wx.ID_OK:
 				# renombrar el capítulo
@@ -710,4 +712,3 @@ class Dialogo(wx.Dialog):
 	def onExit(self, event):
 		self.Destroy()
 		gui.mainFrame.postPopup()
-
