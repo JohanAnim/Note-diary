@@ -1,16 +1,17 @@
 ﻿# -*- coding: utf-8 -*-
-# Copyright (C) 2022 Johan G <gutierrezjohanantonio@gmail.com>
+# Copyright (C) 2022 - 2024 Johan G <gutierrezjohanantonio@gmail.com>
 # This file is covered by the GNU General Public License.
 
 import wx
 import config
 import gui
 import os
+from gui.settingsDialogs import SettingsPanel
 
 import addonHandler
 addonHandler.initTranslation()
 # interface for the settings panel
-class noteDiarySettingsPanel(gui.SettingsPanel):
+class noteDiarySettingsPanel(SettingsPanel):
 	# Translators: This is the label for the settings panel.
 	title = _("Note Diary")
 	def makeSettings(self, settingsSizer):
