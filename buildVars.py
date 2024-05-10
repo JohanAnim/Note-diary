@@ -16,11 +16,11 @@ def _(arg):
 # Add-on information variables
 addon_info = {
 	# add-on Name/identifier, internal for NVDA
-	"addon_name": "Note diary for NVDA",
+	"addon_name": "noteDiary",
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on
 	# to be shown on installation and add-on information found in Add-ons Manager.
-	"addon_summary": _("Note diary"),
+	"addon_summary": _("Note diary for NVDA"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Este complemento te permite tener un espacio para guardar tus notas muy rápidamente con mucha eficiencia. Escribe, accede, guarda y borra tus notas con tan solo un par de teclas."""),
@@ -43,9 +43,9 @@ addon_info = {
 	# Do not change unless you know what you are doing!
 	"addon_updateChannel": None,
 	# Add-on license such as GPL 2
-	"addon_license": "AGPL-3.0",
+	"addon_license": "GPL v3",
 	# URL for the license document the ad-on is licensed under
-	"addon_licenseURL": "https://github.com/JohanAnim/Note-diary/blob/main/LICENSE",
+	"addon_licenseURL": "https://www.gnu.org/licenses/gpl-3.0.html",
 }
 
 # Define the python files that are the sources of your add-on.

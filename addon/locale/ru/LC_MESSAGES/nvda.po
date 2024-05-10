@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Not Günlüğü\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-08 17:02-0500\n"
+"PO-Revision-Date: 2024-05-08 18:19+0300\n"
+"Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
+"Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.3\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: addon/globalPlugins/note diary/__init__.py:82 diary/__init__.py:109
+#: diary/__init__.py:151 buildVars.py:23
+msgid "Note diary"
+msgstr "Not Günlüğü"
+
+#: addon/globalPlugins/note diary/__init__.py:82
+msgid "Abrir la ventana de Note diary"
+msgstr "Not günlüğü penceresini aç"
+
+#: addon/globalPlugins/note diary/__init__.py:105
+msgid "Ya hay una instancia de Note\tdiary abierta"
+msgstr "Not Günlüğü penceresi zaten açık"
+
+#: addon/globalPlugins/note diary/__init__.py:107
+msgid "Abrir la lista de diarios"
+msgstr "Günlük listesini açar"
+
+#: addon/globalPlugins/note diary/__init__.py:157
+msgid "&Más opciones"
+msgstr "&Daha fazla seçenek"
+
+#: addon/globalPlugins/note diary/__init__.py:164
+msgid "Más opciones"
+msgstr "Daha fazla seçenek"
+
+#: addon/globalPlugins/note diary/__init__.py:165
+msgid "Abre el menú de opciones"
+msgstr "Seçenekler menüsünü aç"
+
+#: addon/globalPlugins/note diary/__init__.py:174
+msgid "Búsqueda"
+msgstr "Ara"
+
+#: addon/globalPlugins/note diary/__init__.py:178
+msgid "Buscar:"
+msgstr "Arama:"
+
+#: addon/globalPlugins/note diary/__init__.py:181
+msgid "Filtrar por:"
+msgstr "Şuna göre Filtrele:"
+
+#: addon/globalPlugins/note diary/__init__.py:186
+msgid "&Diarios"
+msgstr "&Günlükler"
+
+#: addon/globalPlugins/note diary/__init__.py:202
+msgid "&Información"
+msgstr "B&ilgi"
+
+#: addon/globalPlugins/note diary/__init__.py:204
+msgid "Seleccione un diario o un capítulo para ver su información"
+msgstr "Bilgilerini görebilmek için bir Günlük veya bölüm seçin"
+
+#: addon/globalPlugins/note diary/__init__.py:210 diary/__init__.py:476
+msgid "&Cerrar"
+msgstr "&Kapat"
+
+#: addon/globalPlugins/note diary/__init__.py:222 diary/__init__.py:334
+msgid "Nuevo diario"
+msgstr "Yeni günlük"
+
+#: addon/globalPlugins/note diary/__init__.py:225 diary/__init__.py:350
+msgid "Nuevo capítulo"
+msgstr "Yeni bölüm"
+
+#: addon/globalPlugins/note diary/__init__.py:228 diary/__init__.py:382
+msgid "Importar diarios"
+msgstr "Günlükleri içe aktar"
+
+#: addon/globalPlugins/note diary/__init__.py:231 diary/__init__.py:365
+msgid "Exportar diarios"
+msgstr "Günlükleri dışa aktar"
+
+#: addon/globalPlugins/note diary/__init__.py:236
+msgid "Acerca de..."
+msgstr "Hakkında..."
+
+#: addon/globalPlugins/note diary/__init__.py:239
+msgid "Documentación"
+msgstr "Yardım"
+
+#: addon/globalPlugins/note diary/__init__.py:242
+msgid "Ayuda"
+msgstr "Yardım"
+
+#: addon/globalPlugins/note diary/__init__.py:294
+msgid "Se encontró {} resultado"
+msgstr "{} sonuç bulundu"
+
+#: addon/globalPlugins/note diary/__init__.py:295
+msgid "Se encontraron {} resultados"
+msgstr "{} sonuç bulundu"
+
+#: addon/globalPlugins/note diary/__init__.py:298
+msgid "No se encontraron resultados"
+msgstr "Sonuç bulunamadı"
+
+#: addon/globalPlugins/note diary/__init__.py:311
+msgid "Editar...\tIntro"
+msgstr "Düzenle...\tEnter"
+
+#: addon/globalPlugins/note diary/__init__.py:314
+msgid "Eliminar...\tSuprimir"
+msgstr "Sil...\tSil"
+
+#: addon/globalPlugins/note diary/__init__.py:317
+msgid "Renombrar...\tF2"
+msgstr "Yeniden Adlandır...\tF2"
+
+#: addon/globalPlugins/note diary/__init__.py:334
+msgid "Introduce el nombre del diario"
+msgstr "Günlük adını girin"
+
+#: addon/globalPlugins/note diary/__init__.py:340
+msgid ""
+"al parecer este diario ya  existe.\n"
+"revise que el nombre no coinsida con otro diario."
+msgstr ""
+"bu günlük zaten mevcut.\n"
+"girdiğiniz adı kontrol edin."
+
+#: addon/globalPlugins/note diary/__init__.py:347
+msgid ""
+"No hay ningún diario.\n"
+"Por favor cree uno nuevo."
+msgstr ""
+"Günlük yok.\n"
+"Lütfen yeni bir tane oluşturun."
+
+#: addon/globalPlugins/note diary/__init__.py:347 diary/__init__.py:356
+#: diary/__init__.py:361 diary/__init__.py:391 diary/__init__.py:396
+msgid "Error"
+msgstr "Hata"
+
+#: addon/globalPlugins/note diary/__init__.py:350
+msgid "Introduce el nombre del capítulo"
+msgstr "Bölüm adını girin"
+
+#: addon/globalPlugins/note diary/__init__.py:356
+msgid ""
+"al parecer este capítulo ya  existe.\n"
+"revise que el nombre no coinsida con otro capítulo."
+msgstr ""
+"bu bölüm zaten mevcut.\n"
+"girdiğiniz adı kontrol edin."
+
+#: addon/globalPlugins/note diary/__init__.py:361
+msgid "Debe seleccionar un diario para crear un nuevo capítulo"
+msgstr "Yeni bir bölüm oluşturmak için bir günlük seçmelisiniz"
+
+#: addon/globalPlugins/note diary/__init__.py:391
+msgid "El archivo está dañado"
+msgstr "Dosya zarar görmüş"
+
+#: addon/globalPlugins/note diary/__init__.py:396
+msgid "El archivo está vacío"
+msgstr "Dosya boş"
+
+#: addon/globalPlugins/note diary/__init__.py:402
+#, python-format
+msgid "¿el archivo con el nombre %s ya existe, te gustaría importarlo aún así?"
+msgstr "%s adlı dosya zaten mevcut, yine de içe aktarmak istiyor musunuz?"
+
+#: addon/globalPlugins/note diary/__init__.py:402
+msgid "Archivo existente"
+msgstr "Mevcut dosya"
+
+#: addon/globalPlugins/note diary/__init__.py:411
+msgid "El archivo se importó correctamente"
+msgstr "Dosya başarıyla içe aktarıldı"
+
+#: addon/globalPlugins/note diary/__init__.py:411
+msgid "Éxito"
+msgstr "Başarılı"
+
+#: addon/globalPlugins/note diary/__init__.py:435
+msgid "Editando el capítulo: "
+msgstr "Bölüm düzenleme: "
+
+#: addon/globalPlugins/note diary/__init__.py:437
+msgid "Conte&nido:"
+msgstr "İ&çerik:"
+
+#: addon/globalPlugins/note diary/__init__.py:446
+msgid "Opciones de copiado"
+msgstr "Kopyalama seçenekleri"
+
+#: addon/globalPlugins/note diary/__init__.py:465
+msgid "Copiar la línea actual &al portapapeles"
+msgstr "Geçerli s&atırı panoya kopyala"
+
+#: addon/globalPlugins/note diary/__init__.py:468
+msgid "Co&piar todo el documento"
+msgstr "Tüm belgeyi ko&pyala"
+
+#: addon/globalPlugins/note diary/__init__.py:472
+msgid "&Guardar"
+msgstr "&Kaydet"
+
+#: addon/globalPlugins/note diary/__init__.py:550
+msgid "El capítulo a sido editado, ¿desea guardar los cambios?"
+msgstr "Bölüm düzenlendi, değişiklikleri kaydetmek istiyor musunuz?"
+
+#: addon/globalPlugins/note diary/__init__.py:550
+msgid "Guardar"
+msgstr "Kaydet"
+
+#: addon/globalPlugins/note diary/__init__.py:567
+msgid "¿Está seguro de que desea eliminar el diario "
+msgstr "Günlüğü silmek istediğinizden emin misiniz? "
+
+#: addon/globalPlugins/note diary/__init__.py:567
+msgid ""
+"? \n"
+"Tome en cuenta que esta acción no es rebersible, y que también eliminará "
+"todos los capítulos del diario"
+msgstr ""
+"? \n"
+"Bu işlemin geri alınamayacağını ve ayrıca günlükten tüm bölümleri "
+"kaldıracağını unutmayın"
+
+#: addon/globalPlugins/note diary/__init__.py:567
+msgid "Eliminar diario"
+msgstr "Günlüğü sil"
+
+#: addon/globalPlugins/note diary/__init__.py:582
+msgid "¿Está seguro de que desea eliminar el capítulo "
+msgstr "Bölümü silmek istediğinizden emin misiniz? "
+
+#: addon/globalPlugins/note diary/__init__.py:582
+msgid "Eliminar capítulo"
+msgstr "Bölümü sil"
+
+#: addon/globalPlugins/note diary/__init__.py:593
+msgid "Ingrese el nuevo nombre del diario"
+msgstr "Yeni günlük adını girin"
+
+#: addon/globalPlugins/note diary/__init__.py:593
+msgid "Renombrar diario"
+msgstr "Günlüğü yeniden adlandır"
+
+#: addon/globalPlugins/note diary/__init__.py:596 diary/__init__.py:609
+msgid "&Renombrar"
+msgstr "Yeniden Adlandı&r"
+
+#: addon/globalPlugins/note diary/__init__.py:606
+msgid "Ingrese el nuevo nombre del capítulo"
+msgstr "Yeni bölüm adını girin"
+
+#: addon/globalPlugins/note diary/__init__.py:606
+msgid "Renombrar capítulo"
+msgstr "Bölümü yeniden adlandır"
+
+#: addon/globalPlugins/note diary/__init__.py:637
+msgid "Se\tha actualizado la ventana"
+msgstr "Pencere güncellendi"
+
+#: addon/globalPlugins/note diary/__init__.py:658
+#, python-brace-format
+msgid ""
+"Nombre del diario: {0}\n"
+"Fecha de creación: {1}\n"
+"Fecha de modificación: {2}\n"
+"Número de capítulos: {3}"
+msgstr ""
+"Günlük Adı: {0}\n"
+"Oluşturma tarihi: {1}\n"
+"Değiştirme tarihi: {2}\n"
+"Bölüm sayısı: {3}"
+
+#: addon/globalPlugins/note diary/__init__.py:675
+#, python-brace-format
+msgid ""
+"Capítulo: {0}\n"
+"Pertenece al diario: {1}\n"
+"Fecha de creación: {2}\n"
+"Fecha de modificación: {3}\n"
+"Número de páginas: {4}"
+msgstr ""
+"Bölüm: {0}\n"
+"Günlüğe ait: {1}\n"
+"Oluşturma tarihi: {2}\n"
+"Değiştirme tarihi: {3}\n"
+"Sayfa sayısı: {4}"
+
+#: addon/globalPlugins/note diary/__init__.py:695
+msgid "Verción actual: "
+msgstr "Geçerli Sürüm:  "
+
+#: addon/globalPlugins/note diary/__init__.py:696
+msgid "Descripción: "
+msgstr "Açıklama: "
+
+#: addon/globalPlugins/note diary/settings.py:15
+msgid "Note Diary"
+msgstr "Not Günlüğü"
+
+#: addon/globalPlugins/note diary/settings.py:18
+msgid "Activar sonidos "
+msgstr "Sesleri etkinleştir "
+
+#: buildVars.py:26
+msgid ""
+"Este complemento te permite tener un espacio para guardar tus notas muy "
+"rápidamente con mucha eficiencia. Escribe, accede, guarda y borra tus notas "
+"con tan solo un par de teclas."
+msgstr ""
+"Bu eklenti, notlarınızı büyük bir verimlilikle çok hızlı bir şekilde "
+"kaydetmek için bir alana sahip olmanızı sağlar.\n"
+" Sadece birkaç tuşla notlarınızı yazın, erişin, kaydedin ve silin."
+
+#~ msgid "Co&piar"
+#~ msgstr "Copy"
+
+#~ msgid "Capítulo: "
+#~ msgstr "Chapter:"
+
+#~ msgid "Pertenese al diario: "
+#~ msgstr "Belong to the newspaper:"
+
+#~ msgid "Fecha de creación: "
+#~ msgstr "Creation date:"
+
+#~ msgid "Fecha de modificación: "
+#~ msgstr "Modification date:"
+
+#~ msgid "Número de páginas: "
+#~ msgstr "Number of pages:"
+
+#~ msgid "Nombre del diario: "
+#~ msgstr "Journal name:"
+
+#~ msgid "Número de capítulos: "
+#~ msgstr "Number of chapters:"
