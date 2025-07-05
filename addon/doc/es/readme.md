@@ -1,92 +1,103 @@
-# Note Diary v2023.2.0
+# Note Diary para NVDA
 
-Un complemento de NVDA para crear, modificar, importar y exportar notas de una manera muy rápida y fácil.
+Un complemento de NVDA que te permite crear, modificar, importar y exportar notas de manera rápida y eficiente.
 
-## Como usar el complemento
+## Características
 
-Para usar el complemento sigue los siguientes pasos:
+*   **Gestión de Diarios y Capítulos**: Organiza tus notas en diarios y capítulos para una mejor estructura.
+*   **Edición Rápida**: Abre y edita capítulos con facilidad.
+*   **Importación y Exportación**: Guarda y restaura tus diarios y capítulos en archivos `.ndn`.
+*   **Búsqueda Integrada**: Encuentra rápidamente diarios y capítulos por nombre.
+*   **Accesibilidad Mejorada**: Diseñado pensando en la accesibilidad para usuarios de NVDA.
+*   **Sonidos Personalizables**: Configura sonidos para eventos clave del complemento.
 
-1. Abre el complemento desde el menú de NVDA, Herramientas y finalmente Note diary. De manera inicial Note diary no tiene asignado un gesto de teclado para abrir la ventana, pero puedes asignarlo en preferencias>Gestos de entrada bajo la categoría de Note diary.
-2. Crea un diario. Para crear un nuevo diario simplemente pulsa el botón de menú que está en la parte de arriba y selecciona Nuevo diario o de manera alternativa puedes pulsar la combinación de teclado CTRL+N estando en el Árbol de diarios, luego, escribe el nombre del diario que quieras. Por ejemplo, si quieres crear un diario personal donde guardes tus notas diarias como cualquier diario común puedes escribir algo como: "Mi diario personal" o otro similar, es dependiendo de que contenido vayas a guardar en el.
-3. Crea capítulos a tu diario recién creado. Puedes hacer esto también de dos maneras: La primera es pulsando el botón de menú de más opciones>Nuevo capítulo o pulsando la combinación de teclado CTRL+P (Más adelante se explican todas las combinaciones posibles). Luego, dale un nombre a tu capítulo, puede ser un título que describa el contenido de ese capítulo, por ejemplo, en el ejemplo anterior, como título de tus notas de diario personal podrías poner la fecha en que lo escribiste. O por ejemplo, si tienes un diario que se llame "Curso de Python" el primer capítulo podría ser algo como: "Clase 01 Hola mundo". Luego de escribir el nombre del capítulo confirma con enter o tab luego enter en el botón de aceptar. Nota importante: Debes estar enfocado en el diario en que quieres crear los capítulos.
-4. Escribe dentro de un capítulo. Luego cuando ya hayas creado el capítulo, simplemente da enter o pulsa la tecla de aplicaciones o la combinación shift f10 y selecciona "Editar" y listo! Solo comienza a escribir en el campo multilínea que se enfoca automáticamente al abrir un capítulo.
-5. Guarda el capítulo. Luego cuando ya hayas terminado de escribir, para guardar solo pulsa la combinación alt+g o navega con tab hasta el botón de "Guardar" y púlsalo, si tienes los sonidos activados emitirá un sonido que indica el guardado del capítulo, de igual manera, si hay edición en el capítulo y pulsas la tecla escape o en botón cerrar se te preguntará si quieres guardar el capítulo antes de cerrar o de lo contrario quieres cerrar sin guardar o continuar con la edición.
-6. Listo! ahora tienes un espacio para escribir tus notas de una manera ordenada, fácil y eficiente.
+## Instalación
+
+1.  Descarga la última versión del complemento desde el enlace de descarga.
+2.  Abre el archivo `.nvda-addon` descargado.
+3.  Confirma la instalación cuando NVDA te lo solicite.
+4.  Reinicia NVDA para que los cambios surtan efecto.
+
+## Cómo usar el complemento
+
+Para usar el complemento, sigue los siguientes pasos:
+
+1.  **Abrir el complemento**: Accede a Note Diary desde el menú de NVDA, en `Herramientas` > `Note Diary`. Puedes asignar un gesto de teclado en `Preferencias` > `Gestos de entrada` bajo la categoría `Note Diary`.
+2.  **Crear un diario**: Pulsa el botón de menú `Más opciones` y selecciona `Nuevo diario`, o usa `CTRL+N` en el árbol de diarios. Introduce el nombre del diario (ej., "Mi diario personal", "Curso de Python").
+3.  **Crear capítulos**: Con el diario seleccionado, pulsa `Más opciones` > `Nuevo capítulo`, o usa `CTRL+P`. Dale un nombre al capítulo (ej., "Clase 01 Hola mundo", "05/07/2025").
+4.  **Escribir en un capítulo**: Selecciona un capítulo y pulsa `Intro`, o `Aplicaciones` / `Shift+F10` y selecciona `Editar`. Comienza a escribir en el campo multilínea.
+5.  **Guardar el capítulo**: Pulsa `Alt+G` o navega con `Tab` hasta el botón `Guardar` y púlsalo. Si hay cambios y cierras la ventana, se te preguntará si deseas guardar.
 
 ## Explicación de la interfaz
 
 ### La lista de diarios
 
-En primer lugar, te encontrarás con la lista de vista de árbol que te permite navegar por tus diarios y capítulos muy fácilmente, en el nivel 0 siempre estarán los diarios, con las flechas arriba y abajo te mueves por los diarios o capítulos, con la tecla enter o las teclas izquierda o derecha expandes o contraes el diario para ver sus capítulos; o también puedes navegar con las teclas de las letras de laa hasta la z.
+Es una vista de árbol que permite navegar por diarios y capítulos. Los diarios están en el nivel 0. Usa las flechas arriba/abajo para moverte, `Intro` o flechas izquierda/derecha para expandir/contraer diarios. También puedes navegar con las letras del alfabeto.
 
 ### El botón de más opciones
 
-Cuando pulses este botón de menú o te ubiques en el, y pulses la flecha abajo aparecerán las siguientes opciones:
+Al pulsar este botón o enfocarlo y pulsar flecha abajo, aparecen las siguientes opciones:
 
-* Nuevo diario: Crea un nuevo diario en la lista de diarios.
-* Nuevo capítulo: Crea un nuevo capítulo en el diario seleccionado.
-* Importar diarios: Restaura diarios desde  un archivo .ndn que contiene todos los diarios junto con sus capítulos correspondientes a tu árbol de diarios.
-* Exportar diarios: Guarda todos tus diarios y capítulos en un archivo ndn para tenerlo siempre disponible como una copia de seguridad o para compartirlo con otra persona y así intercambiar notas.
-* Y finalmente, en el sup menú de Ayuda encuentras los siguientes elementos:
-Acerca de. Muestra un diálogo con la información básica de este complemento.
-Documentación: Muestra este archivo en el navegador predeterminado.
+*   **Nuevo diario**: Crea un nuevo diario.
+*   **Nuevo capítulo**: Crea un nuevo capítulo en el diario seleccionado.
+*   **Importar diarios**: Restaura diarios desde un archivo `.ndn`.
+*   **Exportar diarios**: Guarda todos tus diarios y capítulos en un archivo `.ndn` para copia de seguridad o compartir.
+*   **Ayuda**: Contiene `Acerca de...` (información básica del complemento) y `Documentación` (abre este archivo en el navegador).
 
 ### Cuadro de información de solo lectura
 
-Después de la lista de diarios te encontrarás con un cuadro de edición de solo lectura que contendrá la información básica del diario o capítulo seleccionado.
+Después de la lista de diarios, encontrarás un cuadro de edición de solo lectura con información básica del diario o capítulo seleccionado.
 
-Por ejemplo en los diarios te dirá el nombre del diario, la fecha de creación, la fecha de modificación y los números de capítulos que contiene el diario.
-En los capítulos te dirá el nombre del capítulo seleccionado, el diario que pertenece el capítulo, fecha de creación, fecha de modificación y número de páginas del capítulo.
+*   **Diarios**: Muestra nombre, fecha de creación, fecha de modificación y número de capítulos.
+*   **Capítulos**: Muestra nombre del capítulo, diario al que pertenece, fecha de creación, fecha de modificación y número de páginas.
 
 ### El botón de cerrar
 
-Simplemente cierra la ventana del complemento o alternativamente puedes cerrarla con la tecla escape.
+Cierra la ventana del complemento. También puedes usar la tecla `Escape`.
 
 ## Lista de atajos de teclado
 
-Esta es la lista de atajos disponibles para el complemento:
+### Ventana principal
 
-* Ctrl+N: Crea un nuevo diario.
-* Ctrl+P: Crea un nuevo capítulo en el diario seleccionado.
-* Suprimir: Elimina un diario con todos sus capítulos o un capítulo independiente de algún diario.
-* Enter: Abrir y cerrar un diario y en los capítulos, abre la ventana de edición de ese capítulo.
-* F5: Actualiza la ventana.
-* F2: Renombra el diario o capítulo seleccionado.
-* F1 abre este documento.
-* tecla de aplicaciones o shift + F10 abre un menú contextual para el diario o el capítulo seleccionado.
+*   `Ctrl+N`: Crea un nuevo diario.
+*   `Ctrl+P`: Crea un nuevo capítulo en el diario seleccionado.
+*   `Suprimir`: Elimina un diario (con todos sus capítulos) o un capítulo.
+*   `Intro`: Abre/cierra un diario; abre la ventana de edición de un capítulo.
+*   `F5`: Actualiza la ventana.
+*   `F2`: Renombra el diario o capítulo seleccionado.
+*   `F1`: Abre este documento.
+*   `Aplicaciones` o `Shift+F10`: Abre un menú contextual para el diario o capítulo seleccionado.
 
-Otros atajos útiles en la ventana de diarios:
+### Atajos útiles en la ventana principal
 
-* Alt+M: Abre el menú.
-* Alt+D: Enfoca la lista de diarios
-* Alt+i: enfoca el cuadro de edición de información.
-* Alt+C: Cierra la ventana del complemento.
+*   `Alt+M`: Abre el menú `Más opciones`.
+*   `Alt+D`: Enfoca la lista de diarios.
+*   `Alt+I`: Enfoca el cuadro de edición de información.
+*   `Alt+C`: Cierra la ventana del complemento.
 
-Atajos útiles dentro de la ventana de edición de un capítulo:
+### Atajos útiles dentro de la ventana de edición de un capítulo
 
-* Alt+N: Se enfoca en el campo de edición.
-* Alt+P: Copia todo el contenido del capítulo al portapapeles.
-* Alt+G: guarda el capítulo.
-* Alt+C: cierra el diálogo del capítulo.
+*   `Alt+N`: Enfoca el campo de edición.
+*   `Alt+P`: Copia todo el contenido del capítulo al portapapeles.
+*   `Alt+G`: Guarda el capítulo.
+*   `Alt+C`: Cierra el diálogo del capítulo.
 
-## Algunas notas más sobre Note diary
+## Configuración del complemento
 
-En las opciones de NVDA podrás encontrar el item de Note diary para los ajustes, en en estos momentos el único disponible es el de activar o desactivar los sonidos dentro del complemento.
-Cuando está activada esta opción, se reproducirá en algunos eventos del complemento sonidos, como cuando pasas de diario o de capítulo.
+En las opciones de NVDA, bajo `Note Diary`, puedes activar o desactivar los sonidos del complemento. Cuando están activados, se reproducirán sonidos en eventos como el cambio de diario o capítulo.
 
-## Descarga este complemento
+## Descarga
 
-Para descargar directamente el complemento puedes dar click en el siguiente enlace:
-[Descargar última versión de Note diary](https://github.com/JohanAnim/Note-diary/releases/download/2023.1/Note.diary.for.NVDA-2023.1.nvda-addon)
+Puedes descargar la última versión del complemento desde el siguiente enlace:
+[Descargar Note Diary para NVDA v2025.1.0](https://github.com/JohanAnim/Note-diary/releases/download/2025.1.0/Note.diary.for.NVDA-2025.1.0.nvda-addon)
 
 ## Colaboradores
 
-### Programadores
+Créditos a los siguientes usuarios por colaborar con parte del código fuente y con algunas funcionalidades:
 
-créditos a los siguientes usuarios por colaborar con parte del código fuente y con algunas funcionalidades del mismo:
-funcionalidades del mismo:
+*   [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Implementó la parte inicial de este complemento.
+*   [metalalchemist](https://github.com/metalalchemist/): Implementación de algunas de las funcionalidades del complemento.
 
-* [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Implementó la parte inicial de este complemento.
-* [metalalchemist](https://github.com/metalalchemist/): Implementación de algunas de las funcionalidades del complemento.
+---
 
-© 2023 Johan A G
+© 2023-2025 Johan G
