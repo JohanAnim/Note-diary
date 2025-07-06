@@ -9,7 +9,6 @@ import wx.adv
 from gui.settingsDialogs import SettingsPanel
 import gui
 from gui.nvdaControls import CustomCheckListBox
-
 import addonHandler
 addonHandler.initTranslation()
 

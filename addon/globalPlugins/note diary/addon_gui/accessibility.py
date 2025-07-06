@@ -3,6 +3,8 @@
 # This file is covered by the GNU General Public License.
 
 import wx
+import addonHandler
+addonHandler.initTranslation()
 
 class Accesibilidad(wx.Accessible):
 	def __init__(self, win):

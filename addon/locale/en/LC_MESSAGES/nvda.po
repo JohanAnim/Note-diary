@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Note Diary\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-06 06:49-0500\n"
-"PO-Revision-Date: 2025-07-06 06:55-0500\n"
+"POT-Creation-Date: 2025-07-06 12:13-0500\n"
+"PO-Revision-Date: 2025-07-06 12:14-0500\n"
 "Last-Translator: \n"
 "Language-Team: Johan G\n"
 "Language: en\n"
@@ -21,193 +21,202 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: ⁨addon/globalPlugins/note diary/__init__.py⁩:55 addon/globalPlugins/note diary/__init__.py⁩:82
-#: diary/addon_gui/main_dialog.py⁩:51
+#: ⁨addon/globalPlugins/note diary/__init__.py⁩:53
+#: ⁨addon/globalPlugins/note diary/__init__.py⁩:80
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:42
 msgid "Note diary"
 msgstr "Note diary"
 
-#: ⁨addon/globalPlugins/note diary/__init__.py⁩:55
+#: ⁨addon/globalPlugins/note diary/__init__.py⁩:53
 msgid "Abrir la ventana de Note diary"
 msgstr "Open the Note diary window"
 
-#: ⁨addon/globalPlugins/note diary/__init__.py⁩:78
+#: ⁨addon/globalPlugins/note diary/__init__.py⁩:76
 msgid "Ya hay una instancia de Note\tdiary abierta"
 msgstr "There is already an instance of Note diary open"
 
-#: ⁨addon/globalPlugins/note diary/__init__.py⁩:80
+#: ⁨addon/globalPlugins/note diary/__init__.py⁩:78
 msgid "Abrir la lista de diarios"
 msgstr "Open the diary list"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:26
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:17
 msgid "Note Diary"
 msgstr "Note diary"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:30
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:21
 msgid "Crear un diario o capítulo"
 msgstr "Create a newspaper or chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:31
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:22
 msgid "Borrar un diario o capítulo"
 msgstr "Delete a newspaper or chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:32
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:23
 msgid "Editar un capítulo"
 msgstr "Edit a chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:33
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:24
 msgid "Guardar un capítulo"
 msgstr "Save a chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:34
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:25
 msgid "Pasar por los capítulos"
 msgstr "Go through the chapters"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:35
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:26
 msgid "Pasar por los diarios"
 msgstr "Newspaper"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:36
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:27
 msgid "Búsqueda exitosa"
 msgstr "Successful search"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:37
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:28
 msgid "Búsqueda fallida"
 msgstr "Falling search"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:43
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:34
 msgid "&Activar sonidos"
 msgstr "& Activate sounds"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:48
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:39
 msgid "Sonidos a reproducir:"
 msgstr "Sounds to reproduce:"
 
-#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:57
+#: ⁨addon/globalPlugins/note diary/addon_config/settings.py⁩:48
 msgid "&Probar sonido"
 msgstr "& Try sound"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:14
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:16
 msgid "Editando el capítulo: "
 msgstr "Editing the chapter: "
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:19
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:21
 msgid "Conte&nido:"
 msgstr "Conte&nt:"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:28
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:30
 msgid "Opciones de copiado"
 msgstr "Copy options"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:47
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:49
 msgid "Copiar la línea actual &al portapapeles"
 msgstr "Copy current line to the clipbo&ard"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:50
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:52
 msgid "Co&piar todo el documento"
 msgstr "Co&py entire document"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:54
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:56
 msgid "&Guardar"
 msgstr "&Save"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:58
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:110
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:60
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:101
 msgid "&Cerrar"
 msgstr "&Close"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:126
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:128
 msgid "El capítulo a sido editado, ¿desea guardar los cambios?"
 msgstr "The chapter has been edited, do you want to save the changes?"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:126
+#: ⁨addon/globalPlugins/note diary/addon_gui/chapter_editor.py⁩:128
 msgid "Guardar"
 msgstr "Save"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:57
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:48
 msgid "&Más opciones"
 msgstr "&More options"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:64
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:55
 msgid "Más opciones"
 msgstr "More options"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:65
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:56
 msgid "Abre el menú de opciones"
 msgstr "Open the options menu"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:74
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:65
 msgid "Búsqueda"
 msgstr "Search"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:78
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:69
 msgid "Buscar:"
 msgstr "Look for:"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:81
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:72
 msgid "Filtrar por:"
 msgstr "Filter by:"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:86
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:73
+msgid "Diarios"
+msgstr "Diaries"
+
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:73
+msgid "Capítulos"
+msgstr "Chapters"
+
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:77
 msgid "&Diarios"
 msgstr "&diaries"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:102
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:93
 msgid "&Información"
 msgstr "&Information"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:104
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:95
 msgid "Seleccione un diario o un capítulo para ver su información"
 msgstr "Select a diary or chapter to see its information"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:122
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:194
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:113
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:65
 msgid "Nuevo diario"
 msgstr "New diary"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:125
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:210
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:116
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:82
 msgid "Nuevo capítulo"
 msgstr "New chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:128
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:242
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:119
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:58
 msgid "Importar diarios"
 msgstr "Import diaries"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:131
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:225
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:122
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:48
 msgid "Exportar diarios"
 msgstr "Export diaries"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:136
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:127
 msgid "Acerca de..."
 msgstr "About..."
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:139
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:130
 msgid "Documentación"
 msgstr "Documentation"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:142
+#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:133
 msgid "Ayuda"
 msgstr "Help"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:171
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:42
 msgid "Editar...\tIntro"
 msgstr "Edit...\t Enter"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:174
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:45
 msgid "Eliminar...\tSuprimir"
 msgstr "Delete…\t Delete"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:177
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:48
 msgid "Renombrar...\tF2"
 msgstr "Rename…\t F2"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:194
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:65
 msgid "Introduce el nombre del diario"
 msgstr "Enter the name of the diary"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:200
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:71
 msgid ""
 "al parecer este diario ya  existe.\n"
 "revise que el nombre no coinsida con otro diario."
@@ -215,7 +224,7 @@ msgstr ""
 "apparently this journal already exists.\n"
 "Check that the name does not coincide with another journal."
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:207
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:79
 msgid ""
 "No hay ningún diario.\n"
 "Por favor cree uno nuevo."
@@ -223,20 +232,20 @@ msgstr ""
 "There is no diary.\n"
 "Please create a new one."
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:207
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:216
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:221
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:251
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:256
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:450
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:79
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:88
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:93
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:64
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:67
+#: ⁨addon/globalPlugins/note diary/utils/app_info.py⁩:52
 msgid "Error"
 msgstr "Error"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:210
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:82
 msgid "Introduce el nombre del capítulo"
 msgstr "Enter the chapter name"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:216
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:88
 msgid ""
 "al parecer este capítulo ya  existe.\n"
 "revise que el nombre no coinsida con otro capítulo."
@@ -244,85 +253,62 @@ msgstr ""
 "apparently this chapter already exists.\n"
 "check that the name does not coincide with another chapter."
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:221
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:93
 msgid "Debe seleccionar un diario para crear un nuevo capítulo"
 msgstr "You must select a diary to create a new chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:251
-msgid "El archivo está dañado"
-msgstr "The file is damaged"
-
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:256
-msgid "El archivo está vacío"
-msgstr "The file is empty"
-
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:262
-#, python-format
-msgid "¿el archivo con el nombre %s ya existe, te gustaría importarlo aún así?"
-msgstr "the file with name %s already exists, would you still like to import it?"
-
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:262
-msgid "Archivo existente"
-msgstr "Existing file"
-
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:271
-msgid "El archivo se importó correctamente"
-msgstr "The file was imported successfully"
-
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:271
-msgid "Éxito"
-msgstr "Success"
-
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:305
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:102
 msgid "¿Está seguro de que desea eliminar el diario "
 msgstr "Are you sure you want to delete the diary "
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:305
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:102
 msgid ""
 "? \n"
-"Tome en cuenta que esta acción no es rebersible, y que también eliminará todos los capítulos del diario"
+"Tome en cuenta que esta acción no es rebersible, y que también eliminará "
+"todos los capítulos del diario"
 msgstr ""
 "?\n"
-"Note that this action is not reversible, and will also remove all chapters from the diary"
+"Note that this action is not reversible, and will also remove all chapters "
+"from the diary"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:305
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:102
 msgid "Eliminar diario"
 msgstr "Delete journal"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:320
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:116
 msgid "¿Está seguro de que desea eliminar el capítulo "
 msgstr "Are you sure you want to delete the chapter "
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:320
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:116
 msgid "Eliminar capítulo"
 msgstr "Delete chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:331
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:126
 msgid "Ingrese el nuevo nombre del diario"
 msgstr "Enter the new diary name"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:331
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:126
 msgid "Renombrar diario"
 msgstr "Rename diary"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:334
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:347
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:129
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:142
 msgid "&Renombrar"
 msgstr "&rename"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:344
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:139
 msgid "Ingrese el nuevo nombre del capítulo"
 msgstr "Enter the new chapter name"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:344
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:139
 msgid "Renombrar capítulo"
 msgstr "Rename chapter"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:375
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:170
 msgid "Se\tha actualizado la ventana"
 msgstr "Window has been updated"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:396
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:191
 #, python-brace-format
 msgid ""
 "Nombre del diario: {0}\n"
@@ -335,7 +321,7 @@ msgstr ""
 "Modification date: {2}\n"
 "Number of chapters: {3}"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:413
+#: ⁨addon/globalPlugins/note diary/logic/dialog_logic.py⁩:208
 #, python-brace-format
 msgid ""
 "Capítulo: {0}\n"
@@ -350,29 +336,55 @@ msgstr ""
 "Modification date: {3}\n"
 "Number of pages: {4}"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:433
-msgid "Verción actual: "
-msgstr "Current version: "
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:64
+msgid "El archivo está dañado"
+msgstr "The file is damaged"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:434
-msgid "Descripción: "
-msgstr "Description: "
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:67
+msgid "El archivo está vacío"
+msgstr "The file is empty"
 
-#: ⁨addon/globalPlugins/note diary/addon_gui/main_dialog.py⁩:450
-msgid "No se pudo abrir la documentación."
-msgstr "The documentation could not be opened."
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:72
+#, python-format
+msgid "¿el archivo con el nombre %s ya existe, te gustaría importarlo aún así?"
+msgstr ""
+"the file with name %s already exists, would you still like to import it?"
 
-#: ⁨addon/globalPlugins/note diary/logic/search_logic.py⁩:40
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:72
+msgid "Archivo existente"
+msgstr "Existing file"
+
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:79
+msgid "El archivo se importó correctamente"
+msgstr "The file was imported successfully"
+
+#: ⁨addon/globalPlugins/note diary/logic/file_manager.py⁩:79
+msgid "Éxito"
+msgstr "Success"
+
+#: ⁨addon/globalPlugins/note diary/logic/search_logic.py⁩:42
 msgid "Se encontró {} resultado"
 msgstr "Found {} result"
 
-#: ⁨addon/globalPlugins/note diary/logic/search_logic.py⁩:41
+#: ⁨addon/globalPlugins/note diary/logic/search_logic.py⁩:43
 msgid "Se encontraron {} resultados"
 msgstr "{} results were found"
 
-#: ⁨addon/globalPlugins/note diary/logic/search_logic.py⁩:44
+#: ⁨addon/globalPlugins/note diary/logic/search_logic.py⁩:46
 msgid "No se encontraron resultados"
 msgstr "No results found"
+
+#: ⁨addon/globalPlugins/note diary/utils/app_info.py⁩:35
+msgid "Verción actual: "
+msgstr "Current version: "
+
+#: ⁨addon/globalPlugins/note diary/utils/app_info.py⁩:36
+msgid "Descripción: "
+msgstr "Description: "
+
+#: ⁨addon/globalPlugins/note diary/utils/app_info.py⁩:52
+msgid "No se pudo abrir la documentación."
+msgstr "The documentation could not be opened."
 
 #: buildVars.py:23
 msgid "Note diary for NVDA"
@@ -380,17 +392,16 @@ msgstr "Note Diary for NVDA"
 
 #: buildVars.py:26
 msgid ""
-"Este complemento te permite tener un espacio para guardar tus notas muy rápidamente con mucha "
-"eficiencia. Escribe, accede, guarda y borra tus notas con tan solo un par de teclas."
+"Este complemento te permite tener un espacio para guardar tus notas muy "
+"rápidamente con mucha eficiencia. Escribe, accede, guarda y borra tus notas "
+"con tan solo un par de teclas."
 msgstr ""
-"This plugin allows you to have a space to save your notes very quickly with a lot of efficiency.\n"
+"This plugin allows you to have a space to save your notes very quickly with "
+"a lot of efficiency.\n"
 " Write, access, save and delete your notes with just a couple of keys."
 
 #~ msgid "Co&piar"
 #~ msgstr "Copy"
-
-#~ msgid "Capítulo: "
-#~ msgstr "Chapter:"
 
 #~ msgid "Pertenese al diario: "
 #~ msgstr "Belong to the newspaper:"

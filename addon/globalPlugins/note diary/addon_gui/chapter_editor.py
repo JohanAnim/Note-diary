@@ -5,6 +5,8 @@
 import wx
 import os
 import ui
+import addonHandler
+addonHandler.initTranslation()
 
 from .accessibility import Accesibilidad
 from ..logic import file_manager

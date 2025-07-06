@@ -5,6 +5,8 @@
 import os
 import wx
 import ui
+import addonHandler
+addonHandler.initTranslation()
 
 from . import file_manager
 

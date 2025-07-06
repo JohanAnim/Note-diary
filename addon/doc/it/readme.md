@@ -1,103 +1,107 @@
-# Note Diary para NVDA
+# Note Diary per NVDA
 
-Un complemento de NVDA que te permite crear, modificar, importar y exportar notas de manera rápida y eficiente.
+Un componente aggiuntivo per NVDA che ti consente di creare, modificare, importare ed esportare note in modo rapido ed efficiente.
 
-## Características
+## Caratteristiche
 
-*   **Gestión de Diarios y Capítulos**: Organiza tus notas en diarios y capítulos para una mejor estructura.
-*   **Edición Rápida**: Abre y edita capítulos con facilidad.
-*   **Importación y Exportación**: Guarda y restaura tus diarios y capítulos en archivos `.ndn`.
-*   **Búsqueda Integrada**: Encuentra rápidamente diarios y capítulos por nombre.
-*   **Accesibilidad Mejorada**: Diseñado pensando en la accesibilidad para usuarios de NVDA.
-*   **Sonidos Personalizables**: Configura sonidos para eventos clave del complemento.
+*   **Gestione di Diari e Capitoli**: Organizza le tue note in diari e capitoli per una migliore struttura.
+*   **Modifica Rapida**: Apri e modifica i capitoli con facilità.
+*   **Importazione ed Esportazione**: Salva e ripristina i tuoi diari e capitoli in file `.ndn`.
+*   **Ricerca Integrata**: Trova rapidamente diari e capitoli per nome.
+*   **Accessibilità Migliorata**: Progettato pensando all'accessibilità per gli utenti NVDA.
+*   **Suoni Personalizzabili**: Configura i suoni per gli eventi chiave del componente aggiuntivo.
 
-## Instalación
+## Installazione
 
-1.  Descarga la última versión del complemento desde el enlace de descarga.
-2.  Abre el archivo `.nvda-addon` descargado.
-3.  Confirma la instalación cuando NVDA te lo solicite.
-4.  Reinicia NVDA para que los cambios surtan efecto.
+1.  Scarica l'ultima versione del componente aggiuntivo dal link di download.
+2.  Apri il file `.nvda-addon` scaricato.
+3.  Conferma l'installazione quando richiesto da NVDA.
+4.  Riavvia NVDA affinché le modifiche abbiano effetto.
 
-## Cómo usar el complemento
+## Come usare il componente aggiuntivo
 
-Para usar el complemento, sigue los siguientes pasos:
+Per utilizzare il componente aggiuntivo, segui questi passaggi:
 
-1.  **Abrir el complemento**: Accede a Note Diary desde el menú de NVDA, en `Herramientas` > `Note Diary`. Puedes asignar un gesto de teclado en `Preferencias` > `Gestos de entrada` bajo la categoría `Note Diary`.
-2.  **Crear un diario**: Pulsa el botón de menú `Más opciones` y selecciona `Nuevo diario`, o usa `CTRL+N` en el árbol de diarios. Introduce el nombre del diario (ej., "Mi diario personal", "Curso de Python").
-3.  **Crear capítulos**: Con el diario seleccionado, pulsa `Más opciones` > `Nuevo capítulo`, o usa `CTRL+P`. Dale un nombre al capítulo (ej., "Clase 01 Hola mundo", "05/07/2025").
-4.  **Escribir en un capítulo**: Selecciona un capítulo y pulsa `Intro`, o `Aplicaciones` / `Shift+F10` y selecciona `Editar`. Comienza a escribir en el campo multilínea.
-5.  **Guardar el capítulo**: Pulsa `Alt+G` o navega con `Tab` hasta el botón `Guardar` y púlsalo. Si hay cambios y cierras la ventana, se te preguntará si deseas guardar.
+1.  **Apri il componente aggiuntivo**: Accedi a Note Diary dal menu NVDA, in `Strumenti` > `Note Diary`. Puoi assegnare una scorciatoia da tastiera in `Preferenze` > `Gesti di input` nella categoria `Note Diary`.
+2.  **Crea un diario**: Premi il pulsante del menu `Altre opzioni` e seleziona `Nuovo diario`, oppure usa `CTRL+N` nell'albero dei diari. Inserisci il nome del diario (es., "Il mio diario personale", "Corso di Python").
+3.  **Crea capitoli**: Con il diario selezionato, premi `Altre opzioni` > `Nuovo capitolo`, oppure usa `CTRL+P`. Dai un nome al capitolo (es., "Lezione 01 Ciao mondo", "05/07/2025").
+4.  **Scrivi in un capitolo**: Seleziona un capitolo e premi `Invio`, oppure `Applicazioni` / `Shift+F10` e seleziona `Modifica`. Inizia a scrivere nel campo di testo multilinea.
+5.  **Salva il capitolo**: Premi `Alt+G` o naviga con `Tab` fino al pulsante `Salva` e premilo. Se ci sono modifiche e chiudi la finestra, ti verrà chiesto se desideri salvare.
 
-## Explicación de la interfaz
+## Spiegazione dell'interfaccia
 
-### La lista de diarios
+### L'elenco dei diari
 
-Es una vista de árbol que permite navegar por diarios y capítulos. Los diarios están en el nivel 0. Usa las flechas arriba/abajo para moverte, `Intro` o flechas izquierda/derecha para expandir/contraer diarios. También puedes navegar con las letras del alfabeto.
+È una visualizzazione ad albero che ti consente di navigare tra diari e capitoli. I diari sono al livello 0. Usa le frecce su/giù per spostarti, `Invio` o le frecce sinistra/destra per espandere/comprimere i diari. Puoi anche navigare con le lettere dell'alfabeto.
 
-### El botón de más opciones
+### Il pulsante Altre opzioni
 
-Al pulsar este botón o enfocarlo y pulsar flecha abajo, aparecen las siguientes opciones:
+Quando premi questo pulsante o lo metti a fuoco e premi la freccia giù, appaiono le seguenti opzioni:
 
-*   **Nuevo diario**: Crea un nuevo diario.
-*   **Nuevo capítulo**: Crea un nuevo capítulo en el diario seleccionado.
-*   **Importar diarios**: Restaura diarios desde un archivo `.ndn`.
-*   **Exportar diarios**: Guarda todos tus diarios y capítulos en un archivo `.ndn` para copia de seguridad o compartir.
-*   **Ayuda**: Contiene `Acerca de...` (información básica del complemento) y `Documentación` (abre este archivo en el navegador).
+*   **Nuovo diario**: Crea un nuovo diario.
+*   **Nuovo capitolo**: Crea un nuovo capitolo nel diario selezionato.
+*   **Importa diari**: Ripristina i diari da un file `.ndn`.
+*   **Esporta diari**: Salva tutti i tuoi diari e capitoli in un file `.ndn` per il backup o la condivisione.
+*   **Aiuto**: Contiene `Informazioni su...` (informazioni di base sul componente aggiuntivo) e `Documentazione` (apre questo file nel browser).
 
-### Cuadro de información de solo lectura
+### Casella informazioni di sola lettura
 
-Después de la lista de diarios, encontrarás un cuadro de edición de solo lectura con información básica del diario o capítulo seleccionado.
+Dopo l'elenco dei diari, troverai una casella di modifica di sola lettura con informazioni di base sul diario o capitolo selezionato.
 
-*   **Diarios**: Muestra nombre, fecha de creación, fecha de modificación y número de capítulos.
-*   **Capítulos**: Muestra nombre del capítulo, diario al que pertenece, fecha de creación, fecha de modificación y número de páginas.
+*   **Diari**: Mostra nome, data di creazione, data di modifica e numero di capitoli.
+*   **Capitoli**: Mostra nome del capitolo, diario a cui appartiene, data di creazione, data di modifica e numero di pagine.
 
-### El botón de cerrar
+### Il pulsante Chiudi
 
-Cierra la ventana del complemento. También puedes usar la tecla `Escape`.
+Chiude la finestra del componente aggiuntivo. Puoi anche usare il tasto `Esc`.
 
-## Lista de atajos de teclado
+## Elenco delle scorciatoie da tastiera
 
-### Ventana principal
+### Finestra principale
 
-*   `Ctrl+N`: Crea un nuevo diario.
-*   `Ctrl+P`: Crea un nuevo capítulo en el diario seleccionado.
-*   `Suprimir`: Elimina un diario (con todos sus capítulos) o un capítulo.
-*   `Intro`: Abre/cierra un diario; abre la ventana de edición de un capítulo.
-*   `F5`: Actualiza la ventana.
-*   `F2`: Renombra el diario o capítulo seleccionado.
-*   `F1`: Abre este documento.
-*   `Aplicaciones` o `Shift+F10`: Abre un menú contextual para el diario o capítulo seleccionado.
+*   `Ctrl+N`: Crea un nuovo diario.
+*   `Ctrl+P`: Crea un nuovo capitolo nel diario selezionato.
+*   `Canc`: Elimina un diario (con tutti i suoi capitoli) o un capitolo.
+*   `Invio`: Apre/chiude un diario; apre la finestra di modifica di un capitolo.
+*   `F5`: Aggiorna la finestra.
+*   `F2`: Rinomina il diario o capitolo selezionato.
+*   `F1`: Apre questo documento.
+*   `Applicazioni` o `Shift+F10`: Apre un menu contestuale per il diario o capitolo selezionato.
 
-### Atajos útiles en la ventana principal
+### Scorciatoie utili nella finestra principale
 
-*   `Alt+M`: Abre el menú `Más opciones`.
-*   `Alt+D`: Enfoca la lista de diarios.
-*   `Alt+I`: Enfoca el cuadro de edición de información.
-*   `Alt+C`: Cierra la ventana del complemento.
+*   `Alt+M`: Apre il menu `Altre opzioni`.
+*   `Alt+D`: Mette a fuoco l'elenco dei diari.
+*   `Alt+I`: Mette a fuoco la casella di modifica delle informazioni.
+*   `Alt+C`: Chiude la finestra del componente aggiuntivo.
 
-### Atajos útiles dentro de la ventana de edición de un capítulo
+### Scorciatoie utili all'interno della finestra di modifica di un capitolo
 
-*   `Alt+N`: Enfoca el campo de edición.
-*   `Alt+P`: Copia todo el contenido del capítulo al portapapeles.
-*   `Alt+G`: Guarda el capítulo.
-*   `Alt+C`: Cierra el diálogo del capítulo.
+*   `Alt+N`: Mette a fuoco il campo di modifica.
+*   `Alt+P`: Copia tutto il contenuto del capitolo negli appunti.
+*   `Alt+G`: Salva il capitolo.
+*   `Alt+C`: Chiude la finestra di dialogo del capitolo.
 
-## Configuración del complemento
+## Configurazione del componente aggiuntivo
 
-En las opciones de NVDA, bajo `Note Diary`, puedes activar o desactivar los sonidos del complemento. Cuando están activados, se reproducirán sonidos en eventos como el cambio de diario o capítulo.
+Nelle opzioni NVDA, sotto `Note Diary`, puoi abilitare o disabilitare i suoni del componente aggiuntivo. Quando attivati, i suoni verranno riprodotti in eventi come il cambio di diario o capitolo.
 
-## Descarga
+## Download
 
-Puedes descargar la última versión del complemento desde el siguiente enlace:
-[Descargar Note Diary para NVDA v2025.1.0](https://github.com/JohanAnim/Note-diary/releases/download/2025.1.0/Note.diary.for.NVDA-2025.1.0.nvda-addon)
+Puoi scaricare l'ultima versione del componente aggiuntivo dal seguente link:
+[Scarica Note Diary per NVDA](https://github.com/JohanAnim/Note-diary/releases/latest/download/Note.diary.for.NVDA.nvda-addon)
 
-## Colaboradores
+## Collaboratori
 
-Créditos a los siguientes usuarios por colaborar con parte del código fuente y con algunas funcionalidades:
+Crediti ai seguenti utenti per aver collaborato con parte del codice sorgente e con alcune funzionalità:
 
-*   [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Implementó la parte inicial de este complemento.
-*   [metalalchemist](https://github.com/metalalchemist/): Implementación de algunas de las funcionalidades del complemento.
+*   [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Ha implementato la parte iniziale di questo componente aggiuntivo.
+*   [metalalchemist](https://github.com/metalalchemist/): Implementazione di alcune delle funzionalità del componente aggiuntivo.
 
 ---
 
 © 2023-2025 Johan G
+
+## Cronologia delle modifiche
+
+Puoi vedere tutte le modifiche e le versioni del componente aggiuntivo nella [Cronologia delle modifiche](CHANGELOG.md).

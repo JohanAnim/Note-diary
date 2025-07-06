@@ -10,13 +10,12 @@ import ui
 import config
 import os
 import sys
+import addonHandler
+addonHandler.initTranslation()
 
 from scriptHandler import script
 from .addon_config.settings import noteDiarySettingsPanel
 from .addon_gui.main_dialog import MainDialog
-
-import addonHandler
-addonHandler.initTranslation()
 
 if not os.path.exists(os.path.join(globalVars.appArgs.configPath, "diarios")):
 	os.mkdir(os.path.join(globalVars.appArgs.configPath, "diarios"))

@@ -89,7 +89,7 @@ En las opciones de NVDA, bajo `Note Diary`, puedes activar o desactivar los soni
 ## Descarga
 
 Puedes descargar la última versión del complemento desde el siguiente enlace:
-[Descargar Note Diary para NVDA v2025.1.0](https://github.com/JohanAnim/Note-diary/releases/download/2025.1.0/Note.diary.for.NVDA-2025.1.0.nvda-addon)
+[Descargar Note Diary para NVDA](https://github.com/JohanAnim/Note-diary/releases/latest/download/Note.diary.for.NVDA.nvda-addon)
 
 ## Colaboradores
 
@@ -101,3 +101,7 @@ Créditos a los siguientes usuarios por colaborar con parte del código fuente y
 ---
 
 © 2023-2025 Johan G
+
+## Historial de Cambios
+
+Puedes ver todos los cambios y versiones del complemento en el [Historial de Cambios](CHANGELOG.md).
