@@ -4,7 +4,6 @@
 
 import wx
 import config
-import gui
 import os
 from gui.settingsDialogs import SettingsPanel
 
