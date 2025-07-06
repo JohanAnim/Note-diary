@@ -7,7 +7,7 @@ import os
 import ui
 
 from .accessibility import Accesibilidad
-from logic import file_manager
+from ..logic import file_manager
 
 class ChapterEditorDialog(wx.Dialog):
 	def __init__(self, parent, diario, capitulo):

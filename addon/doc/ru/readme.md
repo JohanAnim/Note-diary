@@ -1,94 +1,103 @@
-# Not Günlüğü
+# Note Diary для NVDA
 
-Notları çok hızlı ve kolay bir şekilde oluşturmak, değiştirmek, içe ve dışa aktarmak için bir NVDA eklentisi.
+Дополнение для NVDA, которое позволяет быстро и эффективно создавать, изменять, импортировать и экспортировать заметки.
 
-## Eklenti nasıl kullanılır?
+## Особенности
 
-Eklentiyi kullanmak için aşağıdaki adımları izleyin:
+*   **Управление дневниками и главами**: Организуйте свои заметки в дневники и главы для лучшей структуры.
+*   **Быстрое редактирование**: Легко открывайте и редактируйте главы.
+*   **Импорт и экспорт**: Сохраняйте и восстанавливайте свои дневники и главы в файлах `.ndn`.
+*   **Встроенный поиск**: Быстро находите дневники и главы по названию.
+*   **Улучшенная доступность**: Разработано с учетом доступности для пользователей NVDA.
+*   **Настраиваемые звуки**: Настраивайте звуки для ключевых событий в дополнении.
 
-1. Eklentiyi, NVDA menüsü>Araçlar>Not Günlüğü seçeneğinden açabilirsiniz. Ayrıca Girdi Hareketleri iletişim kutusunda, Not Günlüğü dalı altından da bir hareket tanımlayabilirsiniz..
-2. Bir günlük oluşturun. Yeni bir günlük oluşturmak için Daha Fazla seçenek menü düğmesine basın ve Yeni Günlük seçeneğini seçin veya alternatif olarak Günlükler Ağaç görünümündeyken CTRL+N tuşlarına basabilirsiniz. Ardından istediğiniz günlük adını yazabilirsiniz. Örneğin, sıradan bir günlük gibi günlük notlarınızı tutacağınız kişisel bir günlük oluşturmak istiyorsanız, içinde tutacağınız içeriğe bağlı olarak “Kişisel günlüğüm” veya benzeri bir şey yazabilirsiniz.
-3. Yeni oluşturduğunuz günlüğünüz için bölümler oluşturun. Bunu iki şekilde de yapabilirsiniz: Birincisi, daha fazla seçenek için menü düğmesine basarak>Yeni Bölüm veya CTRL+P klavye kombinasyonuna basarak (tüm olası kombinasyonlar aşağıda açıklanmıştır). Ardından, bölümünüze bir isim verin, o bölümün içeriğini açıklayan bir başlık olabilir, örneğin yukarıdaki örnekte, kişisel günlüğünüzün başlığı olarak yazdığınız tarihi koyabilirsiniz. Veya örneğin, "Python Kursu" adlı bir günlüğünüz varsa, ilk bölüm şöyle bir şey olabilir: "Sınıf 01 Merhaba Dünya". Bölüm adını yazdıktan sonra enter veya tab ile onaylayın, ardından Tamam düğmesine basın. Önemli not: Bölümleri oluşturmak istediğiniz günlüğe odaklanmalısınız.
-4. Bir bölüm içinde yazın. Daha sonra bölümü oluşturduğunuzda, enter tuşuna veya uygulama tuşuna ya da üst karakter f10 kombinasyonuna basın ve "Düzenle"yi seçin, işte bu kadar! Bir bölümü açtığınızda otomatik olarak odaklanan çok satırlı alana yazmaya başlamanız yeterli.
-5. Bölümü kaydedin. Yazmayı bitirdiğinizde, kaydetmek için sadece alt+K kombinasyonuna basın veya sekme ile “Kaydet” düğmesine gidin ve basın, sesleri etkinleştirdiyseniz, bölümün kaydedildiğini gösteren bir ses çıkaracaktır, aynı şekilde, bölümde düzenleme varsa ve Escape tuşuna veya kapat düğmesine basarsanız, kapatmadan önce bölümü kaydetmek isteyip istemediğiniz veya kaydetmeden kapatmak veya düzenlemeye devam etmek isteyip istemediğiniz sorulacaktır.
-6. Hazır! Artık notlarınızı düzenli, kolay ve verimli bir şekilde yazabileceğiniz bir alanınız var.
+## Установка
 
-## Arayüz açıklaması
+1.  Загрузите последнюю версию дополнения по ссылке для скачивания.
+2.  Откройте загруженный файл `.nvda-addon`.
+3.  Подтвердите установку по запросу NVDA.
+4.  Перезапустите NVDA, чтобы изменения вступили в силу.
 
-### Günlüklerin Listesi
+## Как использовать дополнение
 
-Her şeyden önce, günlükleriniz ve bölümleriniz arasında çok kolay bir şekilde gezinmenizi sağlayan ağaç görünümü listesini bulacaksınız.  
-0 seviyesinde her zaman günlükler olacak. Yukarı ve aşağı oklarla günlükler veya bölümler arasında hareket edeceksiniz.  
-Enter tuşu, sol veya sağ yön tuşlarıyla bölümlerini görmek için günlüğü genişletir veya daraltırsınız.  
-Ayrıca, A'dan Z'ye harf tuşlarıyla gezinebilirsiniz.
+Чтобы использовать дополнение, выполните следующие действия:
 
-### Daha fazla seçenek düğmesi
+1.  **Откройте дополнение**: Доступ к Note Diary можно получить из меню NVDA, в разделе `Инструменты` > `Note Diary`. Вы можете назначить сочетание клавиш в `Настройки` > `Жесты ввода` в категории `Note Diary`.
+2.  **Создайте дневник**: Нажмите кнопку меню `Дополнительные параметры` y elija `Новый дневник` или используйте `CTRL+N` в дереве дневников. Введите название дневника (например, «Мой личный дневник», «Курс по Python»).
+3.  **Создайте главы**: Выбрав дневник, нажмите `Дополнительные параметры` > `Новая глава` или используйте `CTRL+P`. Дайте название главе (например, «Урок 01 Привет, мир», «05/07/2025»).
+4.  **Пишите в главе**: Выберите главу и нажмите `Enter`, или `Applications` / `Shift+F10` y elija `Редактировать`. Начните писать в многострочном поле.
+5.  **Сохраните главу**: Нажмите `Alt+G` или перейдите с помощью `Tab` к кнопке `Сохранить` и нажмите ее. Если есть изменения и вы закроете окно, вас спросят, хотите ли вы сохранить.
 
-Bu menü düğmesine bastığınızda veya menüye gidip aşağı oka bastığınızda aşağıdaki seçenekler görünecektir:
+## Объяснение интерфейса
 
-* Yeni Günlük: Günlükler listesinde yeni bir günlük oluşturur.
-* Yeni Bölüm: Seçilen günlükte yeni bir bölüm oluşturur.
-* Günlükleri İçe Aktar: Günlükleri, tüm günlükleri içeren bir .ndn dosyasından ilgili bölümleriyle birlikte günlük ağacına geri yükler.
-* Günlükleri dışa aktar: Tüm günlükleri ve bölümleri her zaman yedek olarak bulundurmak veya başka biriyle paylaşmak için bir ndn dosyasına kaydeder. yani not alışverişinde bulunur.
-* Son olarak Yardım menüsünde aşağıdaki öğeleri bulacaksınız:
-Hakkında. Bu eklentinin temel bilgilerini içeren bir iletişim kutusu görüntüler.
-Belgeler: Bu dosya varsayılan tarayıcıda görüntülenir.
+### Список дневников
 
-### Salt okunur bilgi kutusu
+Это древовидное представление, которое позволяет перемещаться по дневникам и главам. Дневники находятся на уровне 0. Используйте стрелки вверх/вниз для перемещения, `Enter` или стрелки влево/вправо для разворачивания/сворачивания дневников. Вы также можете перемещаться с помощью букв алфавита.
 
-Günlükler listesinden sonra, seçilen günlük veya bölüme ilişkin temel bilgileri içeren salt okunur bir düzenleme kutusu bulacaksınız.
+### Кнопка «Дополнительные параметры»
 
-Örneğin günlüklerde size günlüğün adını, oluşturulma tarihini, değiştirilme tarihini ve günlüğün içerdiği bölüm numaralarını söyleyecektir.  
-Bölümlerde ise, size seçilen bölümün adını, bölümün ait olduğu günlüğü, oluşturulma tarihini, değişiklik tarihini ve bölümdeki sayfa sayısını söyleyecektir.
+При нажатии этой кнопки или при фокусировке на ней и нажатии стрелки вниз появляются следующие параметры:
 
-### Kapat düğmesi
+*   **Новый дневник**: Создает новый дневник.
+*   **Новая глава**: Создает новую главу в выбранном дневнике.
+*   **Импортировать дневники**: Восстанавливает дневники из файла `.ndn`.
+*   **Экспортировать дневники**: Сохраняет все ваши дневники и главы в файл `.ndn` для резервного копирования или обмена.
+*   **Справка**: Содержит `О программе...` (основная информация о дополнении) и `Документация` (открывает этот файл в браузере).
 
-Eklenti penceresini kapatmanız yeterlidir. Ayrıca, alternatif olarak Escape tuşuyla da kapatabilirsiniz.
+### Информационное поле только для чтения
 
-## Klavye kısayollarının listesi
+После списка дневников вы найдете поле для редактирования только для чтения с основной информацией о выбранном дневнике или главе.
 
-Eklenti için mevcut kısayolların listesi:
+*   **Дневники**: Показывает название, дату создания, дату изменения и количество глав.
+*   **Главы**: Показывает название главы, дневник, к которому она принадлежит, дату создания, дату изменения и количество страниц.
 
-* Ctrl+N: Yeni bir günlük oluşturur.
-* Ctrl+P: Seçilen günlükte yeni bir bölüm oluşturur.
-* Sil tuşu: Bir günlüğü tüm bölümleriyle veya günlüğü bağımsız bir bölümüyle birlikte siler.
-* Enter: Bir günlüğü açıp kapatır ve bölümlerde o bölüme ait düzenleme penceresini açar.
-* F5: Pencereyi yeniler.
-* F2: Seçilen günlüğü veya bölümü yeniden adlandırır.
-* F1 bu belgeyi açar.
-* uygulama tuşu veya Shift + F10, seçilen günlük veya bölüm için bir içerik menüsü açar.
+### Кнопка «Закрыть»
 
-Günlük penceresindeki diğer yararlı kısayollar:
+Закрывает окно дополнения. Вы также можете использовать клавишу `Escape`.
 
-* Alt+D: Menüyü açar.
-* Alt+G: Günlük listesine odaklanır.
-* Alt+i: bilgi düzenleme kutusuna odaklanır.
-* Alt+K: Eklenti penceresini kapatır.
+## Список сочетаний клавиш
 
-Bölüm düzenleme penceresindeki faydalı kısayollar:
+### Главное окно
 
-* Alt+Ç: Düzenleme alanına odaklanır.
-* Alt+P: Bölümün tüm içeriğini panoya kopyalar.
-* Alt+K: bölümü kaydeder.
-* Alt+K: bölüm diyalogunu kapatır.
+*   `Ctrl+N`: Создает новый дневник.
+*   `Ctrl+P`: Создает новую главу в выбранном дневнике.
+*   `Delete`: Удаляет дневник (со всеми его главами) или главу.
+*   `Enter`: Открывает/закрывает дневник; открывает окно редактирования главы.
+*   `F5`: Обновляет окно.
+*   `F2`: Переименовывает выбранный дневник или главу.
+*   `F1`: Открывает этот документ.
+*   `Applications` или `Shift+F10`: Открывает контекстное меню для выбранного дневника или главы.
 
-## Not günlüğü hakkında birkaç not daha
+### Полезные сочетания клавиш в главном окне
 
-NVDA ayarlar iletişim kutusunda eklenti ayarları için Not günlüğü öğesini bulabilirsiniz; şu anda mevcut olan tek şey eklenti içindeki sesleri etkinleştirmek veya devre dışı bırakmaktır.  
-Bu seçenek etkinleştirildiğinde, günlükler veya bölümler arasında geçiş yaptığınızda olduğu gibi bazı eklenti etkinliklerinde sesler çalınacaktır.
+*   `Alt+M`: Открывает меню `Дополнительные параметры`.
+*   `Alt+D`: Фокусируется на списке дневников.
+*   `Alt+I`: Фокусируется на информационном поле редактирования.
+*   `Alt+C`: Закрывает окно дополнения.
 
-## Bu eklentiyi indirin
+### Полезные сочетания клавиш в окне редактирования главы
 
-Eklentiyi doğrudan indirmek için aşağıdaki bağlantıya tıklayabilirsiniz:
-[Not günlüğünün en son sürümünü indirin](https://github.com/JohanAnim/Note-diary/releases/download/2024.1.0/Note.diary.for.NVDA-2024.1.0.nvda-addon)
+*   `Alt+N`: Фокусируется на поле редактирования.
+*   `Alt+P`: Копирует все содержимое главы в буфер обмена.
+*   `Alt+G`: Сохраняет главу.
+*   `Alt+C`: Закрывает диалоговое окно главы.
 
-## Katkıda Bulunanlar:
+## Настройка дополнения
 
-### Programcılar
+В настройках NVDA в разделе `Note Diary` вы можете включить или отключить звуки дополнения. Когда они включены, звуки будут воспроизводиться при таких событиях, как смена дневника или главы.
 
-Kaynak kodun bir kısmı ve bazı işlevleriyle işbirliği yaptıkları için aşağıdaki kullanıcılara teşekkür ederiz:funcionalidades del mismo:
+## Скачать
 
-* [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Bu eklentinin ilk kısmı uygulandı.
-* [metalalchemist](https://github.com/metalalchemist/): Eklentinin bazı işlevlerinin uygulanması.
+Вы можете скачать последнюю версию дополнения по следующей ссылке:
+[Скачать Note Diary для NVDA v2025.1.0](https://github.com/JohanAnim/Note-diary/releases/download/2025.1.0/Note.diary.for.NVDA-2025.1.0.nvda-addon)
 
-© 2024 Johan A G
+## Участники
+
+Спасибо следующим пользователям за сотрудничество с частью исходного кода и с некоторыми функциями:
+
+*   [Héctor J. Benítez Corredera](https://github.com/hxebolax/): Реализовал начальную часть этого дополнения.
+*   [metalalchemist](https://github.com/metalalchemist/): Реализация некоторых функций дополнения.
+
+---
+
+© 2023-2025 Johan G

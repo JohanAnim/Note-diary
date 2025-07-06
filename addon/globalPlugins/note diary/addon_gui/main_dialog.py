@@ -10,11 +10,14 @@ import zipfile
 import globalVars
 import ui
 import config
+import languageHandler
 
 from .accessibility import Accesibilidad
-from logic import file_manager
+from ..logic import file_manager
 from .chapter_editor import ChapterEditorDialog
-from logic import search_logic
+from ..logic import search_logic
+import addonHandler
+addonHandler.initTranslation()
 
 class MainDialog(wx.Dialog):
 # Function taken from the add-on emoticons to center the window
@@ -30,33 +33,17 @@ class MainDialog(wx.Dialog):
 		return (x, y)
 
 	def reproducirSonido(self, sonido):
-		# variables
-		vul = True
-		sonidos = {
-			"crear": "crear.wav",
-			"borrar": "borrar.wav",
-			"editar-cap": "editar-cap.wav",
-			"guardar-cap": "guardar-cap.wav",
-			"pasar-cap": "pasar-cap.wav",
-			"pasar-diario": "pasar-diario.wav",	
-			"busqueda-exitosa": "busqueda_exitosa.wav",
-			"busqueda-fallida": "busqueda_fallida.wav",
-		}
-		if config.conf["Note"]["sounds"]:
-			if vul:
-				# si vul es verdadero, se reproduce el sonido
-				# si no, no se reproduce nada
-				sound_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "resources", "sounds", sonidos[sonido])
-				if os.path.exists(sound_path):
-					try:
-						reproducir = wx.adv.Sound(sound_path)
-						reproducir.Play(wx.adv.SOUND_ASYNC)
-					except Exception as e:
-						print("Error al reproducir el sonido: " + str(e))
-				else:
-					print("El archivo de sonido no existe: " + sound_path)
+		# Comprobar si los sonidos están activados y si el sonido específico está activado
+		if config.conf["Note"]["sounds"] and config.conf["Note"][sonido]:
+			sound_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "resources", "sounds", f"{sonido}.wav")
+			if os.path.exists(sound_path):
+				try:
+					reproducir = wx.adv.Sound(sound_path)
+					reproducir.Play(wx.adv.SOUND_ASYNC)
+				except Exception as e:
+					print(f"Error al reproducir el sonido: {e}")
 			else:
-				print("La reproducción de sonido está deshabilitada por la variable 'vul'.")
+				print(f"El archivo de sonido no existe: {sound_path}")
 
 	def __init__(self, parent):
 		WIDTH = 500
@@ -453,14 +440,16 @@ class MainDialog(wx.Dialog):
 
 	def onDocumentacion(self, event):
 		addon_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
-		#nvda language.
-		idioma=globalVars.appArgs.language.lower()
-		if '_' in idioma:
-			idioma=idioma.split('_')
-			idioma=idioma[0]
-		#intentar abrir  el archivo en el navegador predeterminado con la ruta del idioma.
-		try: os.startfile(os.path.join(addon_dir, "doc", idioma, "readme.html"))
-		except: os.startfile(os.path.join(addon_dir, "doc", 'en', "readme.html"))
+		lang = languageHandler.getLanguage()
+		if "_" in lang:
+			lang = lang.split("_")[0]
+		doc_path = os.path.join(addon_dir, "doc", lang, "readme.html")
+		if not os.path.exists(doc_path):
+			doc_path = os.path.join(addon_dir, "doc", "en", "readme.html")
+		try:
+			os.startfile(doc_path)
+		except OSError:
+			wx.MessageBox(_("No se pudo abrir la documentación."), _("Error"), wx.OK | wx.ICON_ERROR)
 
 	def onExit(self, event):
 		self.Destroy()

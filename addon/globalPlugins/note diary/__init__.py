@@ -10,7 +10,6 @@ import ui
 import config
 import os
 import sys
-sys.path.append(os.path.dirname(__file__))
 
 from scriptHandler import script
 from .addon_config.settings import noteDiarySettingsPanel
@@ -26,7 +25,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		# Call of the constructor of the parent class.
 		super(GlobalPlugin, self).__init__()
-		confspec = {"sounds": "boolean(default=True)"}
+		confspec = {
+			"sounds": "boolean(default=True)",
+			"crear": "boolean(default=True)",
+			"borrar": "boolean(default=True)",
+			"editar-cap": "boolean(default=True)",
+			"guardar-cap": "boolean(default=True)",
+			"pasar-cap": "boolean(default=True)",
+			"pasar-diario": "boolean(default=True)",
+			"busqueda_exitosa": "boolean(default=True)",
+			"busqueda_fallida": "boolean(default=True)"
+		}
 		config.conf.spec['Note'] = confspec
 
 		self._MainWindows = None

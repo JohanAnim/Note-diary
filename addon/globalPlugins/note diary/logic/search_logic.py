@@ -6,7 +6,7 @@ import os
 import wx
 import ui
 
-from logic import file_manager
+from . import file_manager
 
 def search_diaries_and_chapters(main_dialog_instance, text, filter_type):
 	# Crear un diccionario para almacenar los diarios y capítulos que coinciden con la búsqueda
@@ -34,13 +34,13 @@ def search_diaries_and_chapters(main_dialog_instance, text, filter_type):
 
 	# Reproducir un sonido según el resultado de la búsqueda
 	if coincidencias:
-		main_dialog_instance.reproducirSonido("busqueda-exitosa")
+		main_dialog_instance.reproducirSonido("busqueda_exitosa")
 		# sacar la cantidad de diarios y capítulos que coinciden con la búsqueda
 		num_resultados = len(coincidencias)
 		if num_resultados == 1: wx.CallLater(100, lambda: ui.message(_("Se encontró {} resultado").format(num_resultados)))
 		else: wx.CallLater(100, lambda: ui.message(_("Se encontraron {} resultados").format(num_resultados)))
 	else:
-		main_dialog_instance.reproducirSonido("busqueda-fallida")
+		main_dialog_instance.reproducirSonido("busqueda_fallida")
 		wx.CallLater(100, lambda: ui.message(_("No se encontraron resultados")))
 
 	# Expandir todos los diarios que contienen coincidencias en el filtro de los caps
