@@ -10,10 +10,13 @@ import ui
 import addonHandler
 addonHandler.initTranslation()
 
+import markdown
+
 from ..logic import file_manager
 from ..logic import search_logic
 from ..utils.sound_manager import reproducirSonido
-from ..addon_gui.chapter_editor import ChapterEditorDialog
+from ..utils import app_info
+
 
 def onMenuOpen(main_dialog_instance, event):
 	# cambiar el estado del menú de contraído a expandido
@@ -41,6 +44,9 @@ def onMenuContextual(main_dialog_instance, event):
 		# Translators: Label for the menu item to edit a chapter
 		editar = menu.Append(wx.ID_ANY, _("Editar...\tIntro"))
 		main_dialog_instance.Bind(wx.EVT_MENU, main_dialog_instance.onVerCapitulo, editar)
+		# Translators: Label for the menu item to open a chapter in a web view
+		vista_web = menu.Append(wx.ID_ANY, _("Abrir vista web en este capítulo"))
+		main_dialog_instance.Bind(wx.EVT_MENU, lambda evt: onAbrirVistaWeb(main_dialog_instance, evt), vista_web)
 	# Translators: Label for the menu item to delete a diary
 	eliminar_ = menu.Append(wx.ID_ANY, _("Eliminar...\tSuprimir"))
 	main_dialog_instance.Bind(wx.EVT_MENU, lambda evt: onEliminar(main_dialog_instance, evt), eliminar_)
@@ -59,6 +65,14 @@ def onMenuContextual(main_dialog_instance, event):
 
 	main_dialog_instance.PopupMenu(menu, event.GetPosition())
 	menu.Destroy()
+
+def onAbrirVistaWeb(main_dialog_instance, event):
+	diario = main_dialog_instance.tree.GetItemText(main_dialog_instance.tree.GetItemParent(main_dialog_instance.tree.GetSelection()))
+	capitulo = main_dialog_instance.tree.GetItemText(main_dialog_instance.tree.GetSelection())
+	contenido = file_manager.cargarCapitulo(diario, capitulo)
+	# convertir el contenido a html
+	contenido_html = markdown.markdown(contenido, extensions=['tables'])
+	ui.browseableMessage(contenido_html, _("Vista web del capítulo: ") + capitulo, True)
 
 def onNuevoDiario(main_dialog_instance, event):
 	# Translators: title of the dialog to create a new diary

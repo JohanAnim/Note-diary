@@ -10,6 +10,8 @@ addonHandler.initTranslation()
 
 from .accessibility import Accesibilidad
 from ..logic import file_manager
+from ..utils.sound_manager import reproducirSonido
+from ..logic import dialog_logic
 
 class ChapterEditorDialog(wx.Dialog):
 	def __init__(self, parent, diario, capitulo):
@@ -110,10 +112,14 @@ class ChapterEditorDialog(wx.Dialog):
 		ui.reportTextCopiedToClipboard(self.editor.GetValue())
 
 	def onGuardarCapitulo(self, event):
-		# guardar el contenido del campo multilinea en un archivo de texto
-		file_manager.guardarCapitulo(self.diario, self.capitulo, self.editor.GetValue())
-		self.Parent.onFoco() # Actualizar la información en el MainDialog
-		self.EndModal(wx.ID_OK)
+		try:
+			# guardar el contenido del campo multilinea en un archivo de texto
+			file_manager.guardarCapitulo(self.diario, self.capitulo, self.editor.GetValue())
+			reproducirSonido("guardar-cap")
+			dialog_logic.onFoco(self.Parent) # Actualizar la información en el MainDialog
+			self.EndModal(wx.ID_OK)
+		except Exception as e:
+			wx.MessageBox(str(e), _("Error al guardar"), wx.OK | wx.ICON_ERROR)
 
 
 	def onEditarTexto(self, event):
