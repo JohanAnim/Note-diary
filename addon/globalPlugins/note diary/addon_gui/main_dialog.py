@@ -102,6 +102,22 @@ class MainDialog(wx.Dialog):
 		self.btnCerrar.Bind(wx.EVT_BUTTON, self.onExit)
 		self.SetEscapeId(self.btnCerrar.GetId())
 
+		# Mostrar el changelog si existe
+		self._show_changelog()
+
+	def _show_changelog(self):
+		changelog_path = os.path.join(os.path.dirname(__file__), "..", "cambios.txt")
+		if os.path.exists(changelog_path):
+			try:
+				with open(changelog_path, "r", encoding="utf-8") as f:
+					changelog_content = f.read()
+				# Translators: Title of the dialog that shows the new features of the version
+				wx.MessageBox(changelog_content, _("Novedades de la versión"), wx.OK | wx.ICON_INFORMATION)
+				os.remove(changelog_path)
+			except Exception as e:
+				# Translators: Error message when the changelog file cannot be read
+				wx.MessageBox(_("No se pudo leer el archivo de cambios: ") + str(e), _("Error"), wx.OK | wx.ICON_ERROR)
+
 	def onMenu(self, event):
 		# create a menu
 		menu = wx.Menu()
